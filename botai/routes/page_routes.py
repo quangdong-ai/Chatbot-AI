@@ -15,12 +15,14 @@ async def read_index():
 
 
 @router.get("/admin", response_class=HTMLResponse)
+@router.get("/admin.html", response_class=HTMLResponse)
 async def read_admin():
     with open("static/admin.html", "r", encoding="utf-8") as f:
         return f.read()
 
 
 @router.get("/api-docs", response_class=HTMLResponse)
+@router.get("/api-docs.html", response_class=HTMLResponse)
 async def read_api_docs():
     with open("static/api-docs.html", "r", encoding="utf-8") as f:
         return f.read()
