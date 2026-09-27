@@ -1,0 +1,32 @@
+{
+  "pages": [
+    {
+      "document": "scan.pdf",
+      "page": 1,
+      "expected_contains": [
+        "CHƯƠNG 4",
+        "TRIỂN KHAI HỆ THỐNG",
+        "Cấu hình phần cứng",
+        "RTX 3050 Ti",
+        "4 GB VRAM",
+        "16 GB",
+        "3200 MT/s",
+        "512 GB SSD NVMe"
+      ]
+    },
+    {
+      "document": "scan.pdf",
+      "page": 2,
+      "expected_contains": [
+        "Windows 11",
+        "WSL2 docker",
+        "25H2",
+        "v24.0.5",
+        "Python",
+        "3.10.9",
+        "FastAPI",
+        "PyTorch"
+      ]
+    }
+  ]
+}

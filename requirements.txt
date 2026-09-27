@@ -1,0 +1,21 @@
+--extra-index-url https://download.pytorch.org/whl/cu128
+
+pymupdf
+torch==2.11.0+cu128
+torchvision==0.26.0+cu128
+torchaudio==2.11.0+cu128
+langchain
+langchain-community
+langchain-chroma
+langchain-huggingface
+langchain-ollama
+sentence-transformers
+FlagEmbedding
+chromadb
+python-multipart
+python-docx
+openpyxl
+pillow
+pytesseract
+opencv-python
+pytest

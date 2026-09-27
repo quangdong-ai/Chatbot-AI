@@ -1,0 +1,64 @@
+{
+  "page_set": "D:\\BotAI\\evaluation\\parsing_ocr_page_candidates.json",
+  "ground_truth": "",
+  "engines": [
+    "paddleocr_vl"
+  ],
+  "summary": {
+    "paddleocr_vl": {
+      "pages": 1,
+      "ok": 1,
+      "failed": 0,
+      "avg_latency_sec": 38.2812,
+      "avg_text_chars": 0.0,
+      "table_pages": 0
+    }
+  },
+  "results": [
+    {
+      "document": "scan.pdf",
+      "path": "D:\\BotAI\\scan.pdf",
+      "page": 1,
+      "categories": [
+        "low_text_scan_candidate"
+      ],
+      "source_features": {
+        "document": "scan.pdf",
+        "path": "D:\\BotAI\\scan.pdf",
+        "page": 1,
+        "score": 40,
+        "categories": [
+          "low_text_scan_candidate"
+        ],
+        "text_chars": 0,
+        "word_count": 0,
+        "block_count": 1,
+        "image_count": 1,
+        "table_count": 0,
+        "line_like_count": 0,
+        "legal_marker_count": 0,
+        "digit_ratio": 0.0,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": ""
+      },
+      "engines": [
+        {
+          "engine": "paddleocr_vl",
+          "ok": true,
+          "error": "",
+          "latency_sec": 38.2812,
+          "text": "",
+          "text_chars": 0,
+          "word_count": 0,
+          "table_count": 0,
+          "engine_metadata": {
+            "model": "D:\\BotAI\\models--VietAlphaLabs--SenOCR-Vi",
+            "dpi": 216
+          },
+          "preview": ""
+        }
+      ]
+    }
+  ]
+}

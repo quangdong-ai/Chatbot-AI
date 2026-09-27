@@ -1,0 +1,85 @@
+{
+  "kind": "retrieval",
+  "case_file": "D:\\BotAI\\tests\\fixtures\\golden_tailieu_v2_100.json",
+  "limit": 20,
+  "matrix": [
+    {
+      "name": "current_bge_m3_qwen25",
+      "env": {
+        "BOTAI_EMBEDDING_MODEL_PATH": "./models--BAAI--bge-m3",
+        "BOTAI_CHROMA_DIR": "chroma_db",
+        "BOTAI_BM25_PATH": "bm25_retriever.pkl",
+        "BOTAI_LLM_MODEL": "qwen2.5:latest",
+        "BOTAI_RERANKER_ENABLED": "0"
+      },
+      "rebuild": null,
+      "run": {
+        "returncode": 1,
+        "elapsed_sec": 42.685,
+        "stdout_tail": "Initializing AI models, please wait...\nUsing torch device for embeddings/reranker: cuda\nReranker enabled: False\nReranker skipped for fast LLM-focused mode.\nPASS tailieu_01_scope rank=1 top_type=text\nPASS tailieu_02_safe_driving_time rank=1 top_type=text\nPASS tailieu_03_night_driving rank=1 top_type=text\nPASS tailieu_04_a1_self_study rank=1 top_type=text\nPASS tailieu_05_a1_total_time rank=1 top_type=table\nPASS tailieu_06_b1_hours_km rank=1 top_type=table\nPASS tailieu_07_b1_students_per_car rank=3 top_type=table\nPASS tailieu_08_compare_training_forms rank=1 top_type=text\nPASS tailieu_09_b1_completion rank=1 top_type=text\nPASS tailieu_10_a1_exam_report_deadline rank=1 top_type=text\nPASS tailieu_11_ethnic_minority_deadline rank=1 top_type=text\nPASS tailieu_12_periodic_reports rank=2 top_type=text\nPASS tailieu_13_dat_four_hours_thirty rank=1 top_type=text\nPASS tailieu_14_dat_ten_minutes rank=1 top_type=text\nPASS tailieu_15_dat_face_70 rank=1 top_type=text\nFAIL tailieu_16_dat_time_without_km rank=- top_type=text\n  top_source=Theo tài liệu tailieu.pdf, trang PDF 9\nĐường dẫn: /documents/tailieu.pdf#page=9\nPASS tailieu_17_dat_end_after_three_minutes rank=1 top_type=text\nPASS tailieu_18_a1_training_form_citation rank=1 top_type=text\nPASS tailieu_19_b1_completion_citation rank=2 top_type=text\nPASS tailieu_20_dat_location rank=1 top_type=text\n\nSUMMARY {\"total\": 20, \"passed\": 19, \"failed\": 1, \"retrieval_cases\": 20, \"hit_at_1\": 0.8, \"hit_at_3\": 0.95, \"hit_at_5\": 0.95, \"mrr\": 0.8667, \"top_document_accuracy\": 1.0, \"source_page_accuracy\": 0.85, \"source_type_accuracy\": 0.95, \"article_accuracy\": 0.9, \"clause_accuracy\": 0.8462, \"table_accuracy\": null, \"response_time_ms\": 25048}\n",
+        "stderr_tail": "\nLoading weights:   0%|          | 0/391 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 391/391 [00:00<00:00, 21720.06it/s]\n",
+        "result_exists": true
+      },
+      "result": "D:\\BotAI\\evaluation\\ab_runs\\current_bge_m3_qwen25_retrieval.json",
+      "summary": {
+        "total": 20,
+        "passed": 19,
+        "failed": 1,
+        "retrieval_cases": 20,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.95,
+        "hit_at_5": 0.95,
+        "mrr": 0.8667,
+        "top_document_accuracy": 1.0,
+        "source_page_accuracy": 0.85,
+        "source_type_accuracy": 0.95,
+        "article_accuracy": 0.9,
+        "clause_accuracy": 0.8462,
+        "table_accuracy": null,
+        "response_time_ms": 25048
+      }
+    },
+    {
+      "name": "bge_large_en_qwen25_isolated",
+      "env": {
+        "BOTAI_EMBEDDING_MODEL_PATH": "./models--BAAI--bge-large-en-v1.5",
+        "BOTAI_CHROMA_DIR": "evaluation/ab_indexes/bge_large_en/chroma_db",
+        "BOTAI_BM25_PATH": "evaluation/ab_indexes/bge_large_en/bm25_retriever.pkl",
+        "BOTAI_LLM_MODEL": "qwen2.5:latest",
+        "BOTAI_RERANKER_ENABLED": "0",
+        "BOTAI_OCR_ENGINE": "tesseract"
+      },
+      "rebuild": {
+        "returncode": 0,
+        "elapsed_sec": 120.262,
+        "stdout_tail": "1. Loading 2 document(s)...\n  - Loading tailieu.pdf...\nConsider using the pymupdf_layout package for a greatly improved page layout analysis.\n  - Loading storage\\documents\\1790131198_scan.pdf...\nLoaded 1001 chunks (958 text, 4 ocr, 37 table, 2 ocr_table, 0 excel, 0 slide).\n2. Rebuilding BM25 Index with Vietnamese/no-accent tokenization (k1=1.2, b=0.55)...\nBM25 Index saved.\n3. Loading Embedding Model...\nUsing torch device for embeddings: cuda\n4. Rebuilding ChromaDB...\nSUCCESS! Document ingested with text and table-aware chunks.\n",
+        "stderr_tail": "D:\\BotAI\\ingest.py:18: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.\n  from langchain_community.retrievers import BM25Retriever\n\nLoading weights:   0%|          | 0/391 [00:00<?, ?it/s]\nLoading weights:  85%|████████▍ | 332/391 [00:00<00:00, 3317.16it/s]\nLoading weights: 100%|██████████| 391/391 [00:00<00:00, 3311.16it/s]\n"
+      },
+      "run": {
+        "returncode": 1,
+        "elapsed_sec": 38.03,
+        "stdout_tail": "Initializing AI models, please wait...\nUsing torch device for embeddings/reranker: cuda\nReranker enabled: False\nReranker skipped for fast LLM-focused mode.\nPASS tailieu_01_scope rank=1 top_type=text\nPASS tailieu_02_safe_driving_time rank=1 top_type=text\nPASS tailieu_03_night_driving rank=1 top_type=text\nPASS tailieu_04_a1_self_study rank=1 top_type=text\nPASS tailieu_05_a1_total_time rank=1 top_type=table\nPASS tailieu_06_b1_hours_km rank=1 top_type=table\nPASS tailieu_07_b1_students_per_car rank=3 top_type=table\nPASS tailieu_08_compare_training_forms rank=1 top_type=text\nPASS tailieu_09_b1_completion rank=1 top_type=text\nPASS tailieu_10_a1_exam_report_deadline rank=1 top_type=text\nPASS tailieu_11_ethnic_minority_deadline rank=1 top_type=text\nPASS tailieu_12_periodic_reports rank=2 top_type=text\nPASS tailieu_13_dat_four_hours_thirty rank=1 top_type=text\nPASS tailieu_14_dat_ten_minutes rank=1 top_type=text\nPASS tailieu_15_dat_face_70 rank=1 top_type=text\nFAIL tailieu_16_dat_time_without_km rank=- top_type=text\n  top_source=Theo tài liệu tailieu.pdf, trang PDF 9\nĐường dẫn: /documents/tailieu.pdf#page=9\nPASS tailieu_17_dat_end_after_three_minutes rank=1 top_type=text\nPASS tailieu_18_a1_training_form_citation rank=1 top_type=text\nPASS tailieu_19_b1_completion_citation rank=2 top_type=text\nPASS tailieu_20_dat_location rank=1 top_type=text\n\nSUMMARY {\"total\": 20, \"passed\": 19, \"failed\": 1, \"retrieval_cases\": 20, \"hit_at_1\": 0.8, \"hit_at_3\": 0.95, \"hit_at_5\": 0.95, \"mrr\": 0.8667, \"top_document_accuracy\": 1.0, \"source_page_accuracy\": 0.85, \"source_type_accuracy\": 0.95, \"article_accuracy\": 0.9, \"clause_accuracy\": 0.8462, \"table_accuracy\": null, \"response_time_ms\": 24267}\n",
+        "stderr_tail": "\nLoading weights:   0%|          | 0/391 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 391/391 [00:00<00:00, 5750.17it/s]\n",
+        "result_exists": true
+      },
+      "result": "D:\\BotAI\\evaluation\\ab_runs\\bge_large_en_qwen25_isolated_retrieval.json",
+      "summary": {
+        "total": 20,
+        "passed": 19,
+        "failed": 1,
+        "retrieval_cases": 20,
+        "hit_at_1": 0.8,
+        "hit_at_3": 0.95,
+        "hit_at_5": 0.95,
+        "mrr": 0.8667,
+        "top_document_accuracy": 1.0,
+        "source_page_accuracy": 0.85,
+        "source_type_accuracy": 0.95,
+        "article_accuracy": 0.9,
+        "clause_accuracy": 0.8462,
+        "table_accuracy": null,
+        "response_time_ms": 24267
+      }
+    }
+  ]
+}

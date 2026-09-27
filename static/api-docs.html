@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BotAI API Docs</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #0f172a;
+            color: #e5edf8;
+            line-height: 1.6;
+        }
+        main {
+            width: min(980px, calc(100% - 32px));
+            margin: 32px auto;
+        }
+        h1 { margin-bottom: 4px; }
+        h2 { margin-top: 28px; color: #93c5fd; }
+        code, pre {
+            background: rgba(15, 23, 42, 0.86);
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+        }
+        code { padding: 2px 6px; }
+        pre {
+            padding: 14px;
+            overflow-x: auto;
+        }
+        .muted { color: rgba(226, 232, 240, 0.66); }
+        .endpoint {
+            display: inline-block;
+            color: #7dd3fc;
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>BotAI API Docs</h1>
+        <p class="muted">Các endpoint ổn định để tích hợp chatbot vào hệ thống khác.</p>
+
+        <h2><span class="endpoint">GET /api/v1/health</span></h2>
+        <p>Kiểm tra trạng thái model, vector index, BM25 và số chunk đã index.</p>
+
+        <h2><span class="endpoint">GET /api/v1/bots</span></h2>
+        <p>Lấy danh sách bot đang bật.</p>
+
+        <h2><span class="endpoint">GET /api/v1/documents?bot_id=1</span></h2>
+        <p>Lấy danh sách tài liệu đã ingest. Tham số <code>bot_id</code> là tùy chọn.</p>
+
+        <h2><span class="endpoint">POST /api/v1/chat</span></h2>
+        <p>Gửi câu hỏi và nhận JSON có cấu trúc, phù hợp cho website/app khác.</p>
+        <pre>{
+  "message": "Câu hỏi của người dùng",
+  "session_id": "external-session-001",
+  "bot_id": 1,
+  "include_raw_response": true
+}</pre>
+        <p>Response có cấu trúc:</p>
+        <pre>{
+  "ok": true,
+  "answer": "Nội dung trả lời được sinh từ tài liệu truy xuất",
+  "sources": [
+    {
+      "document": "ten-tai-lieu.pdf",
+      "page": "trang hoặc khoảng trang",
+      "url": "/documents/ten-tai-lieu.pdf#page=1",
+      "type": "loại nguồn",
+      "excerpt": "trích đoạn liên quan",
+      "raw": "..."
+    }
+  ],
+  "session_id": "external-session-001",
+  "bot_id": 1,
+  "has_sources": true,
+  "raw_response": "..."
+}</pre>        <p class="muted">Endpoint này dùng cùng pipeline RAG, cache, ghi lịch sử và chống hallucination như giao diện chat hiện tại.</p>
+    </main>
+</body>
+</html>
+

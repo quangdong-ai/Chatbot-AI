@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BotAI golden evaluation case",
+  "type": "object",
+  "required": ["id", "question"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable case identifier."
+    },
+    "question": {
+      "type": "string",
+      "minLength": 1
+    },
+    "answer_reference": {
+      "type": "string",
+      "description": "Human-written reference answer when available."
+    },
+    "expected_contains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "forbidden_contains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "expected_source_contains": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": []
+    },
+    "expected_top_type": {
+      "type": "string",
+      "description": "Expected document type for the first retrieved item, for example text, table, ocr_table."
+    },
+    "source_document": { "type": "string" },
+    "source_page": {
+      "type": ["integer", "string"]
+    },
+    "source_type": { "type": "string" },
+    "expected_article": { "type": "string" },
+    "expected_clause": { "type": "string" },
+    "expected_table": { "type": "string" },
+    "question_type": { "type": "string" },
+    "must_answer": {
+      "type": "boolean",
+      "default": true
+    },
+    "must_refuse": {
+      "type": "boolean",
+      "default": false
+    },
+    "should_have_source": {
+      "type": "boolean",
+      "default": true
+    },
+    "notes": { "type": "string" }
+  },
+  "additionalProperties": true
+}

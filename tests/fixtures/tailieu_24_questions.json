@@ -1,0 +1,149 @@
+[
+  {
+    "id": "tailieu_01_scope",
+    "question": "Thong tu 35/2024/TT-BGTVT quy dinh nhung noi dung gi?",
+    "expected_contains": ["mau giay phep lai xe", "dao tao", "sat hach", "thu hoi"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 1", "Dieu 1"]
+  },
+  {
+    "id": "tailieu_02_safe_driving_time",
+    "question": "Thoi gian lai xe an toan duoc giai thich nhu the nao?",
+    "expected_contains": ["khong de xay ra tai nan", "nghiem trong", "dac biet nghiem trong"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 2", "Dieu 3 khoan 1"]
+  },
+  {
+    "id": "tailieu_03_night_driving",
+    "question": "Thoi gian hoc lai xe ban dem duoc tinh tu may gio den may gio?",
+    "expected_contains": ["18 gio", "05 gio"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 2", "Dieu 3 khoan 5"],
+    "forbidden_contains": ["trang PDF 12"]
+  },
+  {
+    "id": "tailieu_04_a1_self_study",
+    "question": "Nguoi hoc giay phep lai xe hang A1 co duoc tu hoc ly thuyet khong?",
+    "expected_contains": ["Co", "tu hoc", "ly thuyet", "thuc hanh", "tap trung"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 5", "Dieu 5 khoan 1"]
+  },
+  {
+    "id": "tailieu_05_a1_total_time",
+    "question": "Tong thoi gian dao tao toi thieu doi voi hang A1 la bao nhieu gio?",
+    "expected_contains": ["A1", "12 gio"],
+    "expected_source_contains": ["tailieu.pdf", "bang PDF", "trang PDF 6"]
+  },
+  {
+    "id": "tailieu_06_b1_hours_km",
+    "question": "Hang B1 phai hoc toi thieu bao nhieu gio va bao nhieu kilomet thuc hanh?",
+    "expected_contains": ["44 gio", "8 gio", "60 km"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 6", "bang PDF"]
+  },
+  {
+    "id": "tailieu_07_b1_students_per_car",
+    "question": "Mot xe tap lai hang B1 duoc bo tri toi da bao nhieu hoc vien?",
+    "expected_contains": ["khong qua 05 hoc vien"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 6", "Dieu 6 khoan 2"]
+  },
+  {
+    "id": "tailieu_08_compare_training_forms",
+    "question": "Hay so sanh hinh thuc dao tao ly thuyet va thuc hanh giua hang A1, A, B1 voi hang B, C1.",
+    "expected_contains": ["A1", "B1", "tu hoc", "B", "C1", "dao tao tu xa", "thuc hanh", "tap trung"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 5", "Dieu 5 khoan 1"]
+  },
+  {
+    "id": "tailieu_09_b1_completion",
+    "question": "Dieu kien de hoc vien hang B1 duoc cong nhan hoan thanh khoa dao tao la gi?",
+    "expected_contains": ["Dieu 6 khoan 4", "5,0", "100% bai kiem tra"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 7", "Dieu 6 khoan 4"]
+  },
+  {
+    "id": "tailieu_10_a1_exam_report_deadline",
+    "question": "Bao cao dang ky sat hach hang A1 phai duoc gui truoc ky sat hach bao nhieu ngay?",
+    "expected_contains": ["04 ngay lam viec"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 6", "Dieu 6 khoan 3"]
+  },
+  {
+    "id": "tailieu_11_ethnic_minority_deadline",
+    "question": "Truong hop nguoi dan toc thieu so khong biet doc, viet tieng Viet thi bao cao dang ky sat hach A1 phai gui truoc bao lau?",
+    "expected_contains": ["30 ngay"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 6", "Dieu 6 khoan 3"]
+  },
+  {
+    "id": "tailieu_12_periodic_reports",
+    "question": "So Giao thong van tai phai gui bao cao dinh ky sau thang va bao cao nam vao nhung thoi diem nao?",
+    "expected_contains": ["truoc ngay 20 thang 6", "truoc ngay 20 thang 12"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 3", "Dieu 4 khoan 1"]
+  },
+  {
+    "id": "tailieu_13_dat_four_hours_thirty",
+    "question": "Mot hoc vien thuc hanh lai xe trong mot phien keo dai 4 gio 30 phut. Phien hoc do co duoc ghi nhan khong? Vi sao?",
+    "expected_contains": ["Khong", "khong qua 4 gio"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 240", "Phu luc XXXXI"]
+  },
+  {
+    "id": "tailieu_14_dat_ten_minutes",
+    "question": "Hai phien thuc hanh cua mot hoc vien chi cach nhau 10 phut. Du lieu cua cac phien nay co hop le khong?",
+    "expected_contains": ["Khong hop le", "15 phut"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 240", "Phu luc XXXXI"]
+  },
+  {
+    "id": "tailieu_15_dat_face_70",
+    "question": "Mot phien hoc co ty le xac thuc khuon mat dat 70%. Phien hoc co duoc ghi nhan khong?",
+    "expected_contains": ["Khong", "75%"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 240", "Phu luc XXXXI"]
+  },
+  {
+    "id": "tailieu_16_dat_time_without_km",
+    "question": "Hoc vien da hoan thanh 60% thoi gian thuc hanh tren duong nhung chua du so kilomet quy dinh. Nguoi do da hoan thanh noi dung thuc hanh chua?",
+    "expected_contains": ["Chua hoan thanh", "du so km"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 241", "Phu luc XXXXI"]
+  },
+  {
+    "id": "tailieu_17_dat_end_after_three_minutes",
+    "question": "Du lieu ket thuc phien hoc duoc truyen len he thong sau 3 phut. Du lieu co duoc tu dong cong nhan khong va co so dao tao can lam gi?",
+    "expected_contains": ["Khong duoc tu dong cong nhan", "02 phut", "bao cao So Giao thong van tai"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 240", "Phu luc XXXXI"]
+  },
+  {
+    "id": "tailieu_18_a1_training_form_citation",
+    "question": "Hay tra loi va ghi ro dieu, khoan quy dinh ve hinh thuc dao tao hang A1.",
+    "expected_contains": ["Dieu 5 khoan 1", "tu hoc", "tap trung"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 5", "Dieu 5 khoan 1"]
+  },
+  {
+    "id": "tailieu_19_b1_completion_citation",
+    "question": "Dieu kien hoan thanh khoa dao tao hang B1 nam o dieu nao? Hay trich noi dung quan trong.",
+    "expected_contains": ["Dieu 6 khoan 4", "100% bai kiem tra", "5,0"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 7", "Dieu 6 khoan 4"]
+  },
+  {
+    "id": "tailieu_20_dat_location",
+    "question": "Quy dinh ve thoi luong, khoang cach giua cac phien hoc thuc hanh DAT nam o phan nao cua tai lieu?",
+    "expected_contains": ["Phu luc XXXXI", "phan II", "5 phut", "4 gio", "15 phut"],
+    "expected_source_contains": ["tailieu.pdf", "trang PDF 240", "Phu luc XXXXI"]
+  },
+  {
+    "id": "tailieu_21_trap_red_light",
+    "question": "Thong tu nay quy dinh muc phat doi voi nguoi vuot den do la bao nhieu?",
+    "expected_contains": ["khong quy dinh", "khong nen suy doan"],
+    "should_have_source": false
+  },
+  {
+    "id": "tailieu_22_trap_license_fee",
+    "question": "Theo tai lieu, le phi cap giay phep lai xe hang B la bao nhieu?",
+    "expected_contains": ["khong quy dinh", "khong phai le phi"],
+    "should_have_source": false,
+    "forbidden_contains": ["136 gio"]
+  },
+  {
+    "id": "tailieu_23_trap_age_a1",
+    "question": "Nguoi 16 tuoi co duoc cap giay phep lai xe hang A1 khong?",
+    "expected_contains": ["khong tim thay", "khong the ket luan"],
+    "should_have_source": false,
+    "forbidden_contains": ["co the duoc cap"]
+  },
+  {
+    "id": "tailieu_24_trap_price_2026",
+    "question": "Hay cho biet gia hoc lai xe hang B tai Ha Noi nam 2026.",
+    "expected_contains": ["khong quy dinh", "ngoai pham vi tai lieu"],
+    "should_have_source": false
+  }
+]

@@ -1,0 +1,7 @@
+# Optional OCR-VL stack for Vietnamese scanned documents.
+# Install an appropriate paddlepaddle / paddlepaddle-gpu build for your CUDA first.
+paddleocr[doc-parser]>=3.6.0
+huggingface_hub
+transformers==4.55.0
+tokenizers>=0.21,<0.22
+pillow

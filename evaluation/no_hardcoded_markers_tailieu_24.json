@@ -1,0 +1,534 @@
+{
+  "summary": {
+    "total": 24,
+    "passed": 0,
+    "failed": 24,
+    "answer_passed": 5,
+    "source_passed": 2,
+    "forbidden_passed": 24,
+    "top_type_passed": 24,
+    "response_time_ms": 379124
+  },
+  "items": [
+    {
+      "id": "tailieu_01_scope",
+      "question": "Thong tu 35/2024/TT-BGTVT quy dinh nhung noi dung gi?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": true,
+      "missing_answer": [
+        "mau giay phep lai xe",
+        "thu hoi"
+      ],
+      "forbidden_found": [],
+      "missing_source": [],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 1\nĐường dẫn: /documents/tailieu.pdf#page=1",
+      "response_time_ms": 3668,
+      "response_preview": "BỘ GIAO THÔNG VẬN TẢI CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM ____________________ Độc lập - Tự do - Hạnh phúc __________________________________ Số: 35/2024/TT-BGTVT Hà Nội, ngày 15 tháng 11 năm 2024 THÔNG TƯ Quy định về đào tạo, sát hạch, cấp giấy phép lái xe; cấp, sử dụng giấy phép lái xe quốc tế; đào tạo, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ Phần VII ĐIỀU KHOẢN THI HÀNH Điều 66. Hiệu lực thi hành 1. Thông tư này có hiệu lực thi hành từ ngày 01 tháng 01 năm "
+    },
+    {
+      "id": "tailieu_02_safe_driving_time",
+      "question": "Thoi gian lai xe an toan duoc giai thich nhu the nao?",
+      "ok": false,
+      "answer_ok": true,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 3 khoan 1"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 2\nĐường dẫn: /documents/tailieu.pdf#page=2",
+      "response_time_ms": 2632,
+      "response_preview": "Thời gian lái xe an toàn là thời gian người có giấy phép lái xe có hiệu lực, không để xảy ra tai nạn giao thông đường bộ gây hậu quả nghiêm trọng hoặc đặc biệt nghiêm trọng.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 2\nĐường dẫn: /documents/tailieu.pdf#page=2\nLoại nguồn: văn bản\nTrích đoạn: Thời gian lái xe an toàn là thời gian người có giấy phép lái xe có hiệu lực, không để xảy ra tai nạn giao thông đường bộ gây hậu quả nghiêm trọng hoặc đặc biệt nghiêm trọng."
+    },
+    {
+      "id": "tailieu_03_night_driving",
+      "question": "Thoi gian hoc lai xe ban dem duoc tinh tu may gio den may gio?",
+      "ok": false,
+      "answer_ok": true,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 3 khoan 5"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 2\nĐường dẫn: /documents/tailieu.pdf#page=2",
+      "response_time_ms": 2684,
+      "response_preview": "Thời gian học lái xe ban đêm là thời gian được tính từ 18 giờ ngày hôm trước đến 05 giờ sáng ngày hôm sau.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 2\nĐường dẫn: /documents/tailieu.pdf#page=2\nLoại nguồn: văn bản\nTrích đoạn: Thời gian học lái xe ban đêm là thời gian được tính từ 18 giờ ngày hôm trước đến 05 giờ sáng ngày hôm sau."
+    },
+    {
+      "id": "tailieu_04_a1_self_study",
+      "question": "Nguoi hoc giay phep lai xe hang A1 co duoc tu hoc ly thuyet khong?",
+      "ok": false,
+      "answer_ok": true,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 5 khoan 1"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 31\nĐường dẫn: /documents/tailieu.pdf#page=31",
+      "response_time_ms": 2755,
+      "response_preview": "Người có nhu cầu cấp giấy phép lái xe mô tô các hạng A1, A và B1: a) Đối với nội dung học lý thuyết phải học đủ chương trình đào tạo theo quy định tại Thông tư này và được lựa chọn một trong các hình thức học sau: tự học các môn lý thuyết theo quy định của pháp luật về hoạt động đào tạo và sát hạch lái xe hoặc học tập trung tại cơ sở đào tạo lái xe; b) Đối với nội dung thực hành lái xe: theo hình thức tập trung tại cơ sở đào tạo lái xe.\n\n-----------------------------------\nTheo tài liệu tailieu."
+    },
+    {
+      "id": "tailieu_05_a1_total_time",
+      "question": "Tong thoi gian dao tao toi thieu doi voi hang A1 la bao nhieu gio?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": true,
+      "missing_answer": [
+        "12 gio"
+      ],
+      "forbidden_found": [],
+      "missing_source": [],
+      "expected_top_type": "",
+      "actual_top_type": "table",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, bảng PDF, trang PDF 13\nĐường dẫn: /documents/tailieu.pdf#page=13",
+      "response_time_ms": 2747,
+      "response_preview": "Tổng thời gian đào tạo: hạng A1: 44 giờ.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, bảng PDF, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6\nLoại nguồn: bảng PDF\nTrích đoạn: Tổng thời gian đào tạo | giờ | 12 | 32 | 44"
+    },
+    {
+      "id": "tailieu_06_b1_hours_km",
+      "question": "Hang B1 phai hoc toi thieu bao nhieu gio va bao nhieu kilomet thuc hanh?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "44 gio",
+        "8 gio",
+        "60 km"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 6",
+        "bang PDF"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "table",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, bảng PDF, trang PDF 5\nĐường dẫn: /documents/tailieu.pdf#page=5",
+      "response_time_ms": 2654,
+      "response_preview": "Kiểm tra hoàn thành khoá đào tạo a) Hạng B1 phải kiểm tra các môn lý thuyết và thực hành tại cơ sở đào tạo lái xe để được xét hoàn thành khóa đào tạo, gồm: môn học lý thuyết theo bộ câu hỏi sát hạch lý thuyết (nội dung bộ câu hỏi gồm các môn học: pháp luật về giao thông đường bộ;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 7\nĐường dẫn: /documents/tailieu.pdf#page=7\nLoại nguồn: văn bản\nTrích đoạn: Kiểm tra hoàn thành khoá đào tạo a) Hạng B1 phải kiểm tra các môn lý t"
+    },
+    {
+      "id": "tailieu_07_b1_students_per_car",
+      "question": "Mot xe tap lai hang B1 duoc bo tri toi da bao nhieu hoc vien?",
+      "ok": false,
+      "answer_ok": true,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 6 khoan 2"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "table",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, bảng PDF, trang PDF 5\nĐường dẫn: /documents/tailieu.pdf#page=5",
+      "response_time_ms": 2841,
+      "response_preview": "b) Số học viên học thực hành lái xe được quy định cho một xe tập lái hạng B1 không quá 05 học viên;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6\nLoại nguồn: văn bản\nTrích đoạn: b) Số học viên học thực hành lái xe được quy định cho một xe tập lái hạng B1 không quá 05 học viên;"
+    },
+    {
+      "id": "tailieu_08_compare_training_forms",
+      "question": "Hay so sanh hinh thuc dao tao ly thuyet va thuc hanh giua hang A1, A, B1 voi hang B, C1.",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "C1",
+        "dao tao tu xa",
+        "thuc hanh",
+        "tap trung"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 5 khoan 1"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 5\nĐường dẫn: /documents/tailieu.pdf#page=5",
+      "response_time_ms": 2893,
+      "response_preview": "của kỳ báo cáo. Đối với báo cáo định kỳ tổng kết năm được tính từ ngày 15 tháng 12 năm trước đến ngày 14 tháng 12 năm báo cáo; g) Mẫu biểu báo cáo: theo Mẫu số 03 Phụ lục I ban hành kèm theo Thông tư này. Phần II ĐÀO TẠO, SÁT HẠCH, CẤP GIẤY PHÉP LÁI XE CƠ GIỚI ĐƯỜNG BỘ Chương I ĐÀO TẠO LÁI XE Điều 5. Hình thức đào tạo 1. Người có nhu cầu cấp giấy phép lái xe mô tô các hạng A1, A và B1: a) Đối với nội dung học lý thuyết phải học đủ chương trình đào tạo theo quy định tại Thông tư này và được lựa c"
+    },
+    {
+      "id": "tailieu_09_b1_completion",
+      "question": "Dieu kien de hoc vien hang B1 duoc cong nhan hoan thanh khoa dao tao la gi?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Dieu 6 khoan 4",
+        "5,0",
+        "100% bai kiem tra"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 7",
+        "Dieu 6 khoan 4"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 15\nĐường dẫn: /documents/tailieu.pdf#page=15",
+      "response_time_ms": 2929,
+      "response_preview": "Quá thời hạn 01 (một) năm kể từ ngày cơ sở đào tạo lái xe tổ chức xét hoàn thành khóa đào tạo lần đầu mà học viên không đủ điều kiện để được xét hoàn thành khóa đào tạo thì học viên phải được đào tạo lại theo khóa đào tạo mới.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 9\nĐường dẫn: /documents/tailieu.pdf#page=9\nLoại nguồn: văn bản\nTrích đoạn: Quá thời hạn 01 (một) năm kể từ ngày cơ sở đào tạo lái xe tổ chức xét hoàn thành khóa đào tạo lần đầu mà học viên không đủ đ"
+    },
+    {
+      "id": "tailieu_10_a1_exam_report_deadline",
+      "question": "Bao cao dang ky sat hach hang A1 phai duoc gui truoc ky sat hach bao nhieu ngay?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "04 ngay lam viec"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 6 khoan 3"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6",
+      "response_time_ms": 2841,
+      "response_preview": "d) Báo cáo đăng ký sát hạch hạng A1 đối với người dân tộc thiểu số không biết đọc, viết tiếng Việt gửi về Sở Giao thông vận tải trước kỳ sát hạch tối thiểu 30 ngày.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6\nLoại nguồn: văn bản\nTrích đoạn: d) Báo cáo đăng ký sát hạch hạng A1 đối với người dân tộc thiểu số không biết đọc, viết tiếng Việt gửi về Sở Giao thông vận tải trước kỳ sát hạch tối thiểu 30 ngày."
+    },
+    {
+      "id": "tailieu_11_ethnic_minority_deadline",
+      "question": "Truong hop nguoi dan toc thieu so khong biet doc, viet tieng Viet thi bao cao dang ky sat hach A1 phai gui truoc bao lau?",
+      "ok": false,
+      "answer_ok": true,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [],
+      "forbidden_found": [],
+      "missing_source": [
+        "Dieu 6 khoan 3"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6",
+      "response_time_ms": 2848,
+      "response_preview": "d) Báo cáo đăng ký sát hạch hạng A1 đối với người dân tộc thiểu số không biết đọc, viết tiếng Việt gửi về Sở Giao thông vận tải trước kỳ sát hạch tối thiểu 30 ngày.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6\nLoại nguồn: văn bản\nTrích đoạn: d) Báo cáo đăng ký sát hạch hạng A1 đối với người dân tộc thiểu số không biết đọc, viết tiếng Việt gửi về Sở Giao thông vận tải trước kỳ sát hạch tối thiểu 30 ngày."
+    },
+    {
+      "id": "tailieu_12_periodic_reports",
+      "question": "So Giao thong van tai phai gui bao cao dinh ky sau thang va bao cao nam vao nhung thoi diem nao?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "truoc ngay 20 thang 6",
+        "truoc ngay 20 thang 12"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 3",
+        "Dieu 4 khoan 1"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 4\nĐường dẫn: /documents/tailieu.pdf#page=4",
+      "response_time_ms": 2705,
+      "response_preview": "BÁO CÁO VỀ CÔNG TÁC ĐÀO TẠO, CẤP CHỨNG CHỈ BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT GIAO THÔNG ĐƯỜNG BỘ Kính gửi: Sở Giao thông vận tải Thực hiện Thông tư số /2024/TT-BGTVT ngày tháng năm 2024 của Bộ trưởng Bộ Giao thông vận tải quy định về đào tạo, sát hạch, cấp giấy phép lái xe;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 72\nĐường dẫn: /documents/tailieu.pdf#page=72\nLoại nguồn: văn bản\nTrích đoạn: BÁO CÁO VỀ CÔNG TÁC ĐÀO TẠO, CẤP CHỨNG CHỈ BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT GIAO "
+    },
+    {
+      "id": "tailieu_13_dat_four_hours_thirty",
+      "question": "Mot hoc vien thuc hanh lai xe trong mot phien keo dai 4 gio 30 phut. Phien hoc do co duoc ghi nhan khong? Vi sao?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "khong qua 4 gio"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 240",
+        "Phu luc XXXXI"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.pdf#page=240",
+      "response_time_ms": 2658,
+      "response_preview": "b) Số học viên học thực hành lái xe được quy định cho một xe tập lái: hạng B không quá 05 học viên, hạng C1 không quá 08 học viên;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 8\nĐường dẫn: /documents/tailieu.pdf#page=8\nLoại nguồn: văn bản\nTrích đoạn: b) Số học viên học thực hành lái xe được quy định cho một xe tập lái: hạng B không quá 05 học viên, hạng C1 không quá 08 học viên;"
+    },
+    {
+      "id": "tailieu_14_dat_ten_minutes",
+      "question": "Hai phien thuc hanh cua mot hoc vien chi cach nhau 10 phut. Du lieu cua cac phien nay co hop le khong?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Khong hop le",
+        "15 phut"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "Phu luc XXXXI"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 156\nĐường dẫn: /documents/tailieu.pdf#page=156",
+      "response_time_ms": 2658,
+      "response_preview": "Dữ liệu quản lý DAT phải đầy đủ các thông tin theo cấu trúc phù hợp với cấu trúc truyền dữ liệu do Cục Đường bộ Việt Nam ban hành và các yêu cầu sau: a) Dữ liệu truyền đến hệ thống thông tin đào tạo lái xe tại Cục Đường bộ Việt Nam phải đảm bảo chính xác, toàn vẹn và trong khoảng thời gian không quá 02 phút kể từ thời điểm máy chủ của cơ sở đào tạo nhận được thông tin kết thúc phiên học;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.p"
+    },
+    {
+      "id": "tailieu_15_dat_face_70",
+      "question": "Mot phien hoc co ty le xac thuc khuon mat dat 70%. Phien hoc co duoc ghi nhan khong?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "75%"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "Phu luc XXXXI"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.pdf#page=240",
+      "response_time_ms": 2774,
+      "response_preview": "Dữ liệu quản lý DAT phải đầy đủ các thông tin theo cấu trúc phù hợp với cấu trúc truyền dữ liệu do Cục Đường bộ Việt Nam ban hành và các yêu cầu sau: a) Dữ liệu truyền đến hệ thống thông tin đào tạo lái xe tại Cục Đường bộ Việt Nam phải đảm bảo chính xác, toàn vẹn và trong khoảng thời gian không quá 02 phút kể từ thời điểm máy chủ của cơ sở đào tạo nhận được thông tin kết thúc phiên học;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.p"
+    },
+    {
+      "id": "tailieu_16_dat_time_without_km",
+      "question": "Hoc vien da hoan thanh 60% thoi gian thuc hanh tren duong nhung chua du so kilomet quy dinh. Nguoi do da hoan thanh noi dung thuc hanh chua?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Chua hoan thanh",
+        "du so km"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 241",
+        "Phu luc XXXXI"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 163\nĐường dẫn: /documents/tailieu.pdf#page=163",
+      "response_time_ms": 2705,
+      "response_preview": "b) 03 năm đối với: hồ sơ kiểm tra hoàn thành khóa học, dữ liệu lưu trữ quản lý thời gian học lý thuyết môn học pháp luật về giao thông đường bộ đối với học viên học lái xe ô tô, dữ liệu thời gian học thực hành lái xe trên ca bin học lái xe ô tô, dữ liệu giám sát thời gian và quãng đường học lái xe trên đường của học viên, dữ liệu quản lý thời gian học lý thuyết đối với hình thức đào tạo từ xa, tự học có hướng dẫn thực hiện lưu trữ điện tử, các tài liệu quy định tại điểm a, điểm b, điểm c và điểm"
+    },
+    {
+      "id": "tailieu_17_dat_end_after_three_minutes",
+      "question": "Du lieu ket thuc phien hoc duoc truyen len he thong sau 3 phut. Du lieu co duoc tu dong cong nhan khong va co so dao tao can lam gi?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Khong duoc tu dong cong nhan",
+        "bao cao So Giao thong van tai"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "Phu luc XXXXI"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.pdf#page=240",
+      "response_time_ms": 2701,
+      "response_preview": "Dữ liệu quản lý DAT phải đầy đủ các thông tin theo cấu trúc phù hợp với cấu trúc truyền dữ liệu do Cục Đường bộ Việt Nam ban hành và các yêu cầu sau: a) Dữ liệu truyền đến hệ thống thông tin đào tạo lái xe tại Cục Đường bộ Việt Nam phải đảm bảo chính xác, toàn vẹn và trong khoảng thời gian không quá 02 phút kể từ thời điểm máy chủ của cơ sở đào tạo nhận được thông tin kết thúc phiên học;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.p"
+    },
+    {
+      "id": "tailieu_18_a1_training_form_citation",
+      "question": "Hay tra loi va ghi ro dieu, khoan quy dinh ve hinh thuc dao tao hang A1.",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Dieu 5 khoan 1",
+        "tu hoc",
+        "tap trung"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 5",
+        "Dieu 5 khoan 1"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 19\nĐường dẫn: /documents/tailieu.pdf#page=19",
+      "response_time_ms": 2723,
+      "response_preview": "3. Người dân tộc thiểu số không biết đọc, viết tiếng Việt học lái xe mô tô hạng A1 lập 01 bộ hồ sơ, nộp trực tiếp tại cơ sở đào tạo. Hồ sơ bao gồm: Giấy khám sức khoẻ của người lái xe do cơ sở khám bệnh, chữa bệnh đủ tiêu chuẩn theo quy định của pháp luật về khám bệnh, chữa bệnh cấp. Điều 16. Lưu trữ tài liệu đào tạo lái xe, quản lý học viên của các cơ sở đào tạo lái xe giải thể hoặc bị thu hồi giấy phép đào tạo lái xe 1. Cơ sở đào tạo lái xe lưu trữ hồ sơ, tài liệu liên quan của khoá đào tạo a)"
+    },
+    {
+      "id": "tailieu_19_b1_completion_citation",
+      "question": "Dieu kien hoan thanh khoa dao tao hang B1 nam o dieu nao? Hay trich noi dung quan trong.",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Dieu 6 khoan 4",
+        "100% bai kiem tra"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "trang PDF 7",
+        "Dieu 6 khoan 4"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 15\nĐường dẫn: /documents/tailieu.pdf#page=15",
+      "response_time_ms": 172740,
+      "response_preview": "Điều kiện hoàn thành khóa đào tạo hạng B1 nêu trong Điều 9 của tài liệu, cụ thể như sau:\n\n- Học viên phải có 100% các bài kiểm tra khi kết thúc môn học trong chương trình đào tạo có điểm kiểm tra đạt mỗi môn học từ 5,0 điểm trở lên.\n\nNội dung này được trích từ trang PDF 15 của tài liệu tailieu.pdf.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 15\nĐường dẫn: /documents/tailieu.pdf#page=15\nLoại nguồn: văn bản\nTrích đoạn: xét hoàn thành khóa đào tạo lần đầu mà học viên k"
+    },
+    {
+      "id": "tailieu_20_dat_location",
+      "question": "Quy dinh ve thoi luong, khoang cach giua cac phien hoc thuc hanh DAT nam o phan nao cua tai lieu?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "Phu luc XXXXI",
+        "phan II",
+        "5 phut",
+        "4 gio",
+        "15 phut"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "Phu luc XXXXI"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.pdf#page=240",
+      "response_time_ms": 2768,
+      "response_preview": "Dữ liệu quản lý DAT phải đầy đủ các thông tin theo cấu trúc phù hợp với cấu trúc truyền dữ liệu do Cục Đường bộ Việt Nam ban hành và các yêu cầu sau: a) Dữ liệu truyền đến hệ thống thông tin đào tạo lái xe tại Cục Đường bộ Việt Nam phải đảm bảo chính xác, toàn vẹn và trong khoảng thời gian không quá 02 phút kể từ thời điểm máy chủ của cơ sở đào tạo nhận được thông tin kết thúc phiên học;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 240\nĐường dẫn: /documents/tailieu.p"
+    },
+    {
+      "id": "tailieu_21_trap_red_light",
+      "question": "Thong tu nay quy dinh muc phat doi voi nguoi vuot den do la bao nhieu?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "khong quy dinh",
+        "khong nen suy doan"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "unexpected source block"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 44\nĐường dẫn: /documents/tailieu.pdf#page=44",
+      "response_time_ms": 2603,
+      "response_preview": "Việc ghi danh mục hạng giấy phép lái xe và mã số điều kiện hạn chế thực hiện đối với giấy phép lái xe theo Mẫu số 02 thực hiện theo quy định tại mục 1 và mục 3 của Mẫu số 03 Phụ lục XXIV ban hành kèm theo Thông tư này.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 34\nĐường dẫn: /documents/tailieu.pdf#page=34\nLoại nguồn: văn bản\nTrích đoạn: Việc ghi danh mục hạng giấy phép lái xe và mã số điều kiện hạn chế thực hiện đối với giấy phép lái xe theo Mẫu số 02 thực hiện the"
+    },
+    {
+      "id": "tailieu_22_trap_license_fee",
+      "question": "Theo tai lieu, le phi cap giay phep lai xe hang B la bao nhieu?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "khong quy dinh",
+        "khong phai le phi"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "unexpected source block"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 27\nĐường dẫn: /documents/tailieu.pdf#page=27",
+      "response_time_ms": 2894,
+      "response_preview": "b) Thời gian cấp giấy phép lái xe chậm nhất không quá 10 ngày, kể từ ngày kết thúc kỳ sát hạch và người đạt kết quả kỳ sát hạch đã hoàn thành nghĩa vụ nộp lệ phí cấp giấy phép lái xe.\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 36\nĐường dẫn: /documents/tailieu.pdf#page=36\nLoại nguồn: văn bản\nTrích đoạn: b) Thời gian cấp giấy phép lái xe chậm nhất không quá 10 ngày, kể từ ngày kết thúc kỳ sát hạch và người đạt kết quả kỳ sát hạch đã hoàn thành nghĩa vụ nộp lệ phí cấp"
+    },
+    {
+      "id": "tailieu_23_trap_age_a1",
+      "question": "Nguoi 16 tuoi co duoc cap giay phep lai xe hang A1 khong?",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "khong tim thay",
+        "khong the ket luan"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "unexpected source block"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 6\nĐường dẫn: /documents/tailieu.pdf#page=6",
+      "response_time_ms": 2735,
+      "response_preview": "Hạng A cấp cho người lái xe mô tô hai bánh có dung tích xi- 2 lanh trên 125 cm3 hoặc có công suất động cơ điện trên 11 kW và các loại xe quy định cho giấy phép lái xe hạng A1;\n\n-----------------------------------\nTheo tài liệu tailieu.pdf, trang PDF 201\nĐường dẫn: /documents/tailieu.pdf#page=201\nLoại nguồn: văn bản\nTrích đoạn: Hạng A cấp cho người lái xe mô tô hai bánh có dung tích xi- 2 lanh trên 125 cm3 hoặc có công suất động cơ điện trên 11 kW và các loại xe quy định cho giấy phép lái xe hạng"
+    },
+    {
+      "id": "tailieu_24_trap_price_2026",
+      "question": "Hay cho biet gia hoc lai xe hang B tai Ha Noi nam 2026.",
+      "ok": false,
+      "answer_ok": false,
+      "forbidden_ok": true,
+      "source_ok": false,
+      "missing_answer": [
+        "khong quy dinh",
+        "ngoai pham vi tai lieu"
+      ],
+      "forbidden_found": [],
+      "missing_source": [
+        "unexpected source block"
+      ],
+      "expected_top_type": "",
+      "actual_top_type": "text",
+      "top_type_ok": true,
+      "top_source_line": "Theo tài liệu tailieu.pdf, trang PDF 75\nĐường dẫn: /documents/tailieu.pdf#page=75",
+      "response_time_ms": 144968,
+      "response_preview": "Dựa trên tài liệu trích xuất, thông tin về việc học lái xe hạng B tại Hà Nội năm 2026 chưa được đề cập trực tiếp. Tuy nhiên, có một số thông tin liên quan có thể hữu ích:\n\n1. Chương trình đào tạo lái xe mô tô hạng B1 đã được đề cập, nhưng không có thông tin cụ thể về việc học lái xe hạng B.\n\n2. Thông tư số 35/2024/TT-BGTVT đã được ban hành, nhưng không có thông tin về thời gian thực hiện hoặc địa điểm học lái xe tại Hà Nội năm 2026.\n\n3. Về việc cấp giấy phép lái xe, Thông tư này quy định:\n   - M"
+    }
+  ]
+}

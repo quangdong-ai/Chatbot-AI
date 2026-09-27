@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BotAI Admin</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: Inter, Arial, sans-serif;
+            background: #0f172a;
+            color: #e5edf8;
+        }
+        main {
+            width: min(1180px, calc(100% - 32px));
+            margin: 28px auto;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+        h1, h2 { margin: 0; }
+        h1 { font-size: 1.45rem; }
+        h2 { font-size: 1rem; margin-bottom: 12px; color: #bfdbfe; }
+        button, input, textarea, select {
+            border-radius: 10px;
+            border: 1px solid rgba(148, 163, 184, 0.28);
+            background: rgba(15, 23, 42, 0.9);
+            color: #e5edf8;
+            padding: 10px 12px;
+        }
+        button { cursor: pointer; background: #2563eb; border-color: #3b82f6; }
+        textarea { width: 100%; min-height: 74px; resize: vertical; line-height: 1.45; }
+        .tools-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 12px 0; }
+        .pill { display: inline-block; padding: 3px 8px; border-radius: 999px; background: rgba(14, 165, 233, 0.18); color: #7dd3fc; font-size: 0.78rem; }
+        #indexStatus, #ocrStatus, #cacheStatus { padding: 6px 10px; }
+        .mini-button { padding: 7px 9px; font-size: 0.78rem; }
+        .ghost-button { background: rgba(30, 41, 59, 0.9); border-color: rgba(148, 163, 184, 0.35); }
+        .debug-preview { color: rgba(226, 232, 240, 0.8); max-width: 460px; }
+        .form-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 12px 0; }
+        .form-grid label { display: grid; gap: 6px; color: rgba(226, 232, 240, 0.72); font-size: 0.82rem; }
+        .form-grid label:first-child { grid-column: 1 / -1; }
+        .checkbox-label { display: inline-flex; align-items: center; gap: 8px; color: rgba(226, 232, 240, 0.72); }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+        .card, section {
+            background: rgba(30, 41, 59, 0.72);
+            border: 1px solid rgba(148, 163, 184, 0.16);
+            border-radius: 12px;
+            padding: 16px;
+        }
+        .metric {
+            font-size: 1.55rem;
+            font-weight: 700;
+            color: #67e8f9;
+            margin-top: 8px;
+        }
+        section { margin-bottom: 18px; overflow-x: auto; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 760px;
+        }
+        th, td {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+            padding: 10px 8px;
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.88rem;
+        }
+        th { color: #93c5fd; font-weight: 700; }
+        .muted { color: rgba(226, 232, 240, 0.62); }
+        .error { color: #fca5a5; margin-top: 10px; }
+        @media (max-width: 860px) {
+            .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .form-grid { grid-template-columns: 1fr; }
+            header { align-items: flex-start; flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <h1>BotAI Admin</h1>
+                <div class="muted">Theo dõi chất lượng hỏi đáp, lỗi nguồn và thời gian phản hồi.</div>
+            </div>
+            <div>
+                <input id="adminToken" type="password" placeholder="Admin token hoặc token đăng nhập">
+                <button id="refreshBtn">Làm mới</button>
+                <button id="logoutBtn">Đăng xuất</button>
+            </div>
+        </header>
+
+        <div id="error" class="error"></div>
+
+        <section>
+            <h2>Đăng nhập admin</h2>
+            <div class="tools-row">
+                <input id="loginUsername" type="text" placeholder="Tên đăng nhập">
+                <input id="loginPassword" type="password" placeholder="Mật khẩu">
+                <button id="loginBtn">Đăng nhập</button>
+                <span id="loginStatus" class="muted"></span>
+            </div>
+        </section>
+
+        <div class="grid">
+            <div class="card">
+                <div class="muted">Tổng câu hỏi</div>
+                <div id="totalQuestions" class="metric">0</div>
+            </div>
+            <div class="card">
+                <div class="muted">Không tìm thấy</div>
+                <div id="noAnswer" class="metric">0</div>
+            </div>
+            <div class="card">
+                <div class="muted">Thời gian TB</div>
+                <div id="avgTime" class="metric">0 ms</div>
+            </div>
+            <div class="card">
+                <div class="muted">Feedback xấu</div>
+                <div id="badFeedback" class="metric">0</div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Sức khỏe hệ thống</h2>
+            <div class="tools-row">
+                <span id="indexStatus" class="pill">Index: --</span>
+                <span id="ocrStatus" class="pill">OCR: --</span>
+                <span id="cacheStatus" class="pill">Cache: --</span>
+            </div>
+            <div id="diagnosticsDetail" class="muted"></div>
+        </section>
+
+        <section>
+            <h2>Quản lý tài liệu</h2>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+                <select id="documentBotSelect"></select>
+                <input id="documentFile" type="file" accept=".pdf,.txt,.docx,.xlsx,.pptx">
+                <button id="uploadBtn">Upload và ingest</button>
+                <span id="uploadStatus" class="muted"></span>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+                <select id="urlBotSelect"></select>
+                <input id="documentUrl" type="url" placeholder="https://example.com/tai-lieu" style="min-width:min(520px,100%);">
+                <button id="addUrlBtn">Thêm URL</button>
+                <span id="urlStatus" class="muted"></span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên gốc</th>
+                        <th>Bot</th>
+                        <th>File lưu</th>
+                        <th>Loại</th>
+                        <th>Trạng thái</th>
+                        <th>Cập nhật</th>
+                        <th>Chuyển bot</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="documentsBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Người dùng</h2>
+            <div class="tools-row">
+                <input id="newUsername" type="text" placeholder="Tên đăng nhập">
+                <input id="newPassword" type="password" placeholder="Mật khẩu tối thiểu 6 ký tự">
+                <select id="newRole">
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                </select>
+                <button id="addUserBtn">Tạo user</button>
+                <span id="userStatus" class="muted"></span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Role</th>
+                        <th>Ngày tạo</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="usersBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Multi bot</h2>
+            <div class="form-grid">
+                <label>
+                    Tên bot
+                    <input id="botName" type="text" placeholder="Ví dụ: Bot luật giao thông">
+                </label>
+                <label>
+                    Mô tả
+                    <textarea id="botDescription" placeholder="Bot này dùng cho nhóm tài liệu nào?"></textarea>
+                </label>
+                <label>
+                    Prompt riêng
+                    <textarea id="botPrompt" placeholder="Ví dụ: Trả lời như chuyên viên tư vấn pháp lý, ngắn gọn và có điều khoản nếu có."></textarea>
+                </label>
+            </div>
+            <div class="tools-row">
+                <button id="addBotBtn">Tạo bot</button>
+                <button id="cancelBotEditBtn" class="ghost-button" style="display:none;">Hủy sửa</button>
+                <span id="botStatus" class="muted"></span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Tên</th>
+                        <th>Mô tả</th>
+                        <th>Prompt</th>
+                        <th>Trạng thái</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="botsBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Tài liệu được trích dẫn nhiều</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tài liệu</th>
+                        <th>Số lần</th>
+                    </tr>
+                </thead>
+                <tbody id="sourcesBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Thống kê theo bot</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Bot</th>
+                        <th>Câu hỏi</th>
+                        <th>Không tìm thấy</th>
+                        <th>Thời gian TB</th>
+                        <th>Tài liệu</th>
+                    </tr>
+                </thead>
+                <tbody id="botStatsBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Eval tự động</h2>
+            <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+                <select id="evalBotSelect"></select>
+                <button id="runEvalBtn">Chạy bộ kiểm thử</button>
+                <span id="evalSummary" class="muted"></span>
+            </div>
+            <div class="form-grid">
+                <label>
+                    Câu hỏi kiểm thử
+                    <textarea id="evalQuestion" placeholder="Ví dụ: Hạng B số sàn cần bao nhiêu giờ thực hành lái xe trên đường?"></textarea>
+                </label>
+                <label>
+                    Cụm bắt buộc trong câu trả lời
+                    <textarea id="evalExpectedAnswer" placeholder="Mỗi dòng một cụm, ví dụ:&#10;40 giờ&#10;hạng B"></textarea>
+                </label>
+                <label>
+                    Cụm bắt buộc trong nguồn
+                    <textarea id="evalExpectedSource" placeholder="Mỗi dòng một cụm, ví dụ:&#10;tailieu.pdf&#10;trang PDF 8"></textarea>
+                </label>
+                <label>
+                    Yêu cầu có dẫn nguồn
+                    <span class="checkbox-label"><input id="evalShouldHaveSource" type="checkbox" checked> Có</span>
+                </label>
+            </div>
+            <div class="tools-row">
+                <button id="addEvalCaseBtn">Thêm test case</button>
+                <button id="cancelEvalEditBtn" class="ghost-button" style="display:none;">Hủy sửa</button>
+                <span id="evalCaseStatus" class="muted"></span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Câu hỏi</th>
+                        <th>Cần có trong trả lời</th>
+                        <th>Cần có trong nguồn</th>
+                        <th>Nguồn</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="evalCasesBody"></tbody>
+            </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kết quả</th>
+                        <th>Câu hỏi</th>
+                        <th>Thiếu nội dung</th>
+                        <th>Thiếu nguồn</th>
+                        <th>ms</th>
+                    </tr>
+                </thead>
+                <tbody id="evalBody"></tbody>
+            </table>
+            <h2 style="margin-top:18px;">Lịch sử eval gần nhất</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Bot</th>
+                        <th>Kết quả</th>
+                        <th>ms</th>
+                        <th>Lỗi gần nhất</th>
+                    </tr>
+                </thead>
+                <tbody id="evalHistoryBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Debug truy xuất nguồn</h2>
+            <textarea id="debugQuestion" placeholder="Nhập câu hỏi cần kiểm tra nguồn..."></textarea>
+            <div class="tools-row">
+                <select id="debugBotSelect"></select>
+                <button id="debugRetrieveBtn">Kiểm tra nguồn</button>
+                <span id="debugSummary" class="muted"></span>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Nguồn</th>
+                        <th>Trang</th>
+                        <th>Loại</th>
+                        <th>Kênh</th>
+                        <th>Điểm</th>
+                        <th>Dẫn nguồn</th>
+                        <th>Preview</th>
+                    </tr>
+                </thead>
+                <tbody id="debugBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>20 câu hỏi gần nhất</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Intent</th>
+                        <th>Câu hỏi</th>
+                        <th>Trả lời</th>
+                        <th>ms</th>
+                    </tr>
+                </thead>
+                <tbody id="questionsBody"></tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Feedback cần xem lại</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thời gian</th>
+                        <th>Loại</th>
+                        <th>Câu hỏi</th>
+                        <th>Lý do</th>
+                    </tr>
+                </thead>
+                <tbody id="feedbackBody"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script>
+        const tokenInput = document.getElementById('adminToken');
+        tokenInput.value = localStorage.getItem('botai_admin_token') || '';
+        let editingBotId = null;
+        let editingEvalCaseId = null;
+
+        function headers() {
+            const token = tokenInput.value.trim();
+            localStorage.setItem('botai_admin_token', token);
+            return token ? { 'X-Admin-Token': token } : {};
+        }
+
+        function truncate(text, size = 160) {
+            text = String(text || '');
+            return text.length > size ? `${text.slice(0, size)}...` : text;
+        }
+
+        function splitLines(text) {
+            return String(text || '')
+                .split(/\n|,/)
+                .map((item) => item.trim())
+                .filter(Boolean);
+        }
+
+        async function api(path) {
+            const response = await fetch(path, { headers: headers() });
+            const data = await response.json();
+            if (data.error) throw new Error(data.error);
+            return data;
+        }
+
+        async function loadDashboard() {
+            document.getElementById('error').textContent = '';
+            try {
+                const [stats, questions, feedback, documents, evalCases, evalHistory, users, bots] = await Promise.all([
+                    api('/api/admin/stats'),
+                    api('/api/admin/questions'),
+                    api('/api/admin/feedback'),
+                    api('/api/documents'),
+                    api('/api/admin/eval/cases'),
+                    api('/api/admin/eval/history'),
+                    api('/api/admin/users'),
+                    api('/api/admin/bots'),
+                ]);
+
+                document.getElementById('totalQuestions').textContent = stats.total_questions;
+                document.getElementById('noAnswer').textContent = stats.no_answer;
+                document.getElementById('avgTime').textContent = `${stats.average_response_time_ms} ms`;
+                document.getElementById('badFeedback').textContent = stats.bad_feedback;
+                const index = stats.index || {};
+                const ocr = stats.ocr || {};
+                const byType = index.by_type || {};
+                document.getElementById('indexStatus').textContent = `Index: ${index.total_chunks || 0} chunks`;
+                document.getElementById('ocrStatus').textContent = ocr.ready
+                    ? `OCR: sẵn sàng (${ocr.language || ''})`
+                    : `OCR: chưa sẵn sàng`;
+                document.getElementById('cacheStatus').textContent = `Cache: ${stats.cache_entries || 0}`;
+                document.getElementById('diagnosticsDetail').textContent = [
+                    `Chunk theo loại: ${Object.entries(byType).map(([key, value]) => `${key}=${value}`).join(', ') || 'chưa có'}`,
+                    ocr.ready ? '' : `OCR thiếu: ${(ocr.missing || []).join(', ') || ocr.error || 'không rõ'}`,
+                ].filter(Boolean).join(' | ');
+                const botOptions = bots.items.map((bot) => `<option value="${bot.id}">${bot.name}</option>`).join('');
+                window._adminBots = bots.items;
+                window._adminEvalCases = evalCases.items;
+                document.getElementById('documentBotSelect').innerHTML = botOptions;
+                document.getElementById('urlBotSelect').innerHTML = botOptions;
+                document.getElementById('evalBotSelect').innerHTML = botOptions;
+                document.getElementById('debugBotSelect').innerHTML = botOptions;
+                document.getElementById('sourcesBody').innerHTML = (stats.top_sources || []).map((item) => `
+                    <tr>
+                        <td>${item.source}</td>
+                        <td>${item.count}</td>
+                    </tr>
+                `).join('');
+                const docsByBot = Object.fromEntries((stats.document_stats_by_bot || []).map((item) => [String(item.bot_id), item.document_count]));
+                document.getElementById('botStatsBody').innerHTML = (stats.bot_stats || []).map((item) => `
+                    <tr>
+                        <td>${item.bot_name}</td>
+                        <td>${item.total_questions}</td>
+                        <td>${item.no_answer}</td>
+                        <td>${item.average_response_time_ms} ms</td>
+                        <td>${docsByBot[String(item.bot_id)] || 0}</td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('questionsBody').innerHTML = questions.items.map((item) => `
+                    <tr>
+                        <td>${item.created_at || ''}</td>
+                        <td>${item.intent || ''}</td>
+                        <td><span class="pill">${item.bot_name || `Bot #${item.bot_id || 1}`}</span> ${truncate(item.question)}</td>
+                        <td>${truncate(item.answer)}</td>
+                        <td>${item.response_time_ms || 0}</td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('feedbackBody').innerHTML = feedback.items.map((item) => `
+                    <tr>
+                        <td>${item.created_at || ''}</td>
+                        <td>${item.rating || ''}</td>
+                        <td><span class="pill">${item.bot_name || `Bot #${item.bot_id || 1}`}</span> ${truncate(item.question)}</td>
+                        <td>${truncate(item.comment || item.answer)}</td>
+                    </tr>
+                `).join('');
+
+                document.getElementById('documentsBody').innerHTML = documents.items.map((item) => `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${truncate(item.original_name, 120)} ${item.protected ? '<span class="pill">Hệ thống</span>' : ''}</td>
+                        <td>${truncate(item.bot_name || `Bot #${item.bot_id || 1}`, 80)}</td>
+                        <td><a href="/documents/${item.filename}" target="_blank" rel="noopener noreferrer">${truncate(item.filename, 120)}</a></td>
+                        <td>${item.file_type}</td>
+                        <td>${item.status}${item.error_message ? `<div class="error">${truncate(item.error_message, 120)}</div>` : ''}</td>
+                        <td>${item.updated_at || ''}</td>
+                        <td><select data-move-doc-id="${item.id}">${bots.items.map((bot) => `<option value="${bot.id}" ${String(bot.id) === String(item.bot_id || 1) ? 'selected' : ''}>${bot.name}</option>`).join('')}</select></td>
+                        <td>
+                            <button class="mini-button ghost-button" data-report-id="${item.id}" data-report-mode="summary" data-report-format="docx">Tóm tắt DOCX</button>
+                            <button class="mini-button ghost-button" data-report-id="${item.id}" data-report-mode="summary" data-report-format="pdf">PDF</button>
+                            <button class="mini-button ghost-button" data-report-id="${item.id}" data-report-mode="checklist" data-report-format="docx">Checklist</button>
+                            ${item.protected ? '<span class="muted">Không xóa</span>' : `
+                                <button class="mini-button ghost-button" data-replace-id="${item.id}">Thay file</button>
+                                <button class="mini-button" data-delete-id="${item.id}">Xóa</button>
+                            `}
+                        </td>
+                    </tr>
+                `).join('');
+                document.getElementById('evalCasesBody').innerHTML = evalCases.items.map((item) => `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${truncate(item.question, 180)}</td>
+                        <td>${(item.expected_contains || []).map((value) => `<span class="pill">${truncate(value, 60)}</span>`).join(' ')}</td>
+                        <td>${(item.expected_source_contains || []).map((value) => `<span class="pill">${truncate(value, 60)}</span>`).join(' ')}</td>
+                        <td>${item.should_have_source ? 'Có' : 'Không'}</td>
+                        <td>
+                            <button class="mini-button ghost-button" data-edit-eval-id="${item.id}">Sửa</button>
+                            <button class="mini-button" data-delete-eval-id="${item.id}">Xóa</button>
+                        </td>
+                    </tr>
+                `).join('');
+                document.getElementById('usersBody').innerHTML = users.items.map((item) => `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.username}</td>
+                        <td><span class="pill">${item.role}</span></td>
+                        <td>${item.created_at || ''}</td>
+                        <td><button data-delete-user-id="${item.id}">Xóa</button></td>
+                    </tr>
+                `).join('');
+                document.getElementById('botsBody').innerHTML = bots.items.map((item) => `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${truncate(item.name, 120)}</td>
+                        <td>${truncate(item.description, 160)}</td>
+                        <td>${truncate(item.system_prompt, 220)}</td>
+                        <td><button data-toggle-bot-id="${item.id}" data-active="${item.is_active ? 1 : 0}">${item.is_active ? 'Đang bật' : 'Đang tắt'}</button></td>
+                        <td>
+                            <button class="mini-button ghost-button" data-edit-bot-id="${item.id}">Sửa</button>
+                            <button class="mini-button" data-delete-bot-id="${item.id}">Xóa</button>
+                        </td>
+                    </tr>
+                `).join('');
+                document.getElementById('evalHistoryBody').innerHTML = (evalHistory.items || []).map((run) => {
+                    const failedItems = (run.items || []).filter((item) => !item.ok);
+                    const firstFailure = failedItems[0];
+                    const failureText = firstFailure
+                        ? `${truncate(firstFailure.question, 90)} | thiếu: ${[...(firstFailure.missing_answer || []), ...(firstFailure.missing_source || [])].join(', ')}`
+                        : '';
+                    return `
+                        <tr>
+                            <td>${run.created_at || ''}</td>
+                            <td>${run.bot_name || `Bot #${run.bot_id || 1}`}</td>
+                            <td><span class="pill">${run.passed}/${run.total}</span> ${run.failed ? `${run.failed} lỗi` : 'đạt hết'}</td>
+                            <td>${run.response_time_ms || 0}</td>
+                            <td>${truncate(failureText, 180)}</td>
+                        </tr>
+                    `;
+                }).join('');
+                if (documents.items.some((item) => item.status === 'processing')) {
+                    setTimeout(loadDashboard, 4000);
+                }
+                document.querySelectorAll('[data-delete-id]').forEach((button) => {
+                    button.addEventListener('click', async () => {
+                        if (!confirm('Xóa tài liệu này và ingest lại chỉ mục?')) return;
+                        button.disabled = true;
+                        await fetch(`/api/documents/${button.dataset.deleteId}`, {
+                            method: 'DELETE',
+                            headers: headers(),
+                        });
+                        loadDashboard();
+                    });
+                });
+                document.querySelectorAll('[data-replace-id]').forEach((button) => {
+                    button.addEventListener('click', () => replaceDocument(Number(button.dataset.replaceId), button));
+                });
+                document.querySelectorAll('[data-report-id]').forEach((button) => {
+                    button.addEventListener('click', () => exportDocumentReport(
+                        Number(button.dataset.reportId),
+                        button.dataset.reportMode,
+                        button.dataset.reportFormat,
+                        button,
+                    ));
+                });
+                document.querySelectorAll('[data-move-doc-id]').forEach((select) => {
+                    select.addEventListener('change', async () => {
+                        await fetch(`/api/documents/${select.dataset.moveDocId}/bot`, {
+                            method: 'PUT',
+                            headers: { ...headers(), 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ bot_id: Number(select.value) }),
+                        });
+                        loadDashboard();
+                    });
+                });
+                document.querySelectorAll('[data-delete-eval-id]').forEach((button) => {
+                    button.addEventListener('click', async () => {
+                        if (!confirm('Xóa test case này?')) return;
+                        button.disabled = true;
+                        await fetch(`/api/admin/eval/cases/${button.dataset.deleteEvalId}`, {
+                            method: 'DELETE',
+                            headers: headers(),
+                        });
+                        loadDashboard();
+                    });
+                });
+                document.querySelectorAll('[data-edit-eval-id]').forEach((button) => {
+                    button.addEventListener('click', () => startEditEvalCase(Number(button.dataset.editEvalId)));
+                });
+                document.querySelectorAll('[data-delete-user-id]').forEach((button) => {
+                    button.addEventListener('click', async () => {
+                        if (!confirm('Xóa user này?')) return;
+                        button.disabled = true;
+                        const response = await fetch(`/api/admin/users/${button.dataset.deleteUserId}`, {
+                            method: 'DELETE',
+                            headers: headers(),
+                        });
+                        const data = await response.json();
+                        if (data.error) document.getElementById('userStatus').textContent = `Lỗi: ${data.error}`;
+                        loadDashboard();
+                    });
+                });
+                document.querySelectorAll('[data-toggle-bot-id]').forEach((button) => {
+                    button.addEventListener('click', async () => {
+                        const isActive = button.dataset.active === '1';
+                        await fetch(`/api/admin/bots/${button.dataset.toggleBotId}`, {
+                            method: 'PUT',
+                            headers: { ...headers(), 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ is_active: !isActive }),
+                        });
+                        loadDashboard();
+                    });
+                });
+                document.querySelectorAll('[data-delete-bot-id]').forEach((button) => {
+                    button.addEventListener('click', async () => {
+                        if (!confirm('Xóa bot này?')) return;
+                        const response = await fetch(`/api/admin/bots/${button.dataset.deleteBotId}`, {
+                            method: 'DELETE',
+                            headers: headers(),
+                        });
+                        const data = await response.json();
+                        if (data.error) document.getElementById('botStatus').textContent = `Lỗi: ${data.error}`;
+                        loadDashboard();
+                    });
+                });
+                document.querySelectorAll('[data-edit-bot-id]').forEach((button) => {
+                    button.addEventListener('click', () => startEditBot(Number(button.dataset.editBotId)));
+                });
+            } catch (error) {
+                document.getElementById('error').textContent = `Không tải được dashboard: ${error.message}`;
+            }
+        }
+
+        async function uploadDocument() {
+            const fileInput = document.getElementById('documentFile');
+            const status = document.getElementById('uploadStatus');
+            if (!fileInput.files.length) {
+                status.textContent = 'Chọn một file trước.';
+                return;
+            }
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+            formData.append('bot_id', document.getElementById('documentBotSelect').value || '1');
+            status.textContent = 'Đang upload và ingest...';
+            document.getElementById('uploadBtn').disabled = true;
+            try {
+                const response = await fetch('/api/documents/upload', {
+                    method: 'POST',
+                    headers: headers(),
+                    body: formData,
+                });
+                const data = await response.json();
+                status.textContent = data.ok
+                    ? 'Đã upload, hệ thống đang ingest nền. Bấm Làm mới để xem trạng thái.'
+                    : `Lỗi: ${data.error}`;
+                fileInput.value = '';
+                loadDashboard();
+            } finally {
+                document.getElementById('uploadBtn').disabled = false;
+            }
+        }
+
+        async function addUrlDocument() {
+            const input = document.getElementById('documentUrl');
+            const status = document.getElementById('urlStatus');
+            const url = input.value.trim();
+            if (!url) {
+                status.textContent = 'Nhập URL trước.';
+                return;
+            }
+            status.textContent = 'Đang tải URL và ingest...';
+            document.getElementById('addUrlBtn').disabled = true;
+            try {
+                const response = await fetch('/api/documents/url', {
+                    method: 'POST',
+                    headers: { ...headers(), 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url, bot_id: Number(document.getElementById('urlBotSelect').value || 1) }),
+                });
+                const data = await response.json();
+                status.textContent = data.ok
+                    ? 'Đã thêm URL, hệ thống đang ingest nền.'
+                    : `Lỗi: ${data.error}`;
+                if (data.ok) input.value = '';
+                loadDashboard();
+            } finally {
+                document.getElementById('addUrlBtn').disabled = false;
+            }
+        }
+
+        function replaceDocument(documentId, triggerButton) {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.pdf,.txt,.docx,.xlsx,.pptx';
+            input.addEventListener('change', async () => {
+                if (!input.files.length) return;
+                const status = document.getElementById('uploadStatus');
+                const formData = new FormData();
+                formData.append('file', input.files[0]);
+                triggerButton.disabled = true;
+                status.textContent = `Đang thay file cho tài liệu #${documentId}...`;
+                try {
+                    const response = await fetch(`/api/documents/${documentId}/replace`, {
+                        method: 'POST',
+                        headers: headers(),
+                        body: formData,
+                    });
+                    const data = await response.json();
+                    status.textContent = data.ok
+                        ? `Đã thay file cho tài liệu #${documentId}, hệ thống đang ingest nền.`
+                        : `Lỗi: ${data.error}`;
+                    loadDashboard();
+                } finally {
+                    triggerButton.disabled = false;
+                }
+            }, { once: true });
+            input.click();
+        }
+
+        async function exportDocumentReport(documentId, mode, format, triggerButton) {
+            const status = document.getElementById('uploadStatus');
+            triggerButton.disabled = true;
+            status.textContent = `Đang tạo ${mode === 'checklist' ? 'checklist' : 'tóm tắt'} ${format.toUpperCase()} cho tài liệu #${documentId}...`;
+            try {
+                const response = await fetch(`/api/documents/${documentId}/report`, {
+                    method: 'POST',
+                    headers: { ...headers(), 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ mode, format }),
+                });
+                const data = await response.json();
+                if (!data.ok) {
+                    status.textContent = `Lỗi: ${data.error}`;
+                    return;
+                }
+                status.textContent = `Đã tạo file: ${data.title || ''}`;
+                window.open(data.url, '_blank', 'noopener,noreferrer');
+            } finally {
+                triggerButton.disabled = false;
+            }
+        }
+
+        async function loginAdmin() {
+            const status = document.getElementById('loginStatus');
+            const username = document.getElementById('loginUsername').value.trim();
+            const password = document.getElementById('loginPassword').value;
+            if (!username || !password) {
+                status.textContent = 'Nhập tên đăng nhập và mật khẩu.';
+                return;
+            }
+            status.textContent = 'Đang đăng nhập...';
+            const response = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+            if (!data.ok) {
+                status.textContent = `Lỗi: ${data.error}`;
+                return;
+            }
+            tokenInput.value = data.token;
+            localStorage.setItem('botai_admin_token', data.token);
+            document.getElementById('loginPassword').value = '';
+            status.textContent = `Đã đăng nhập: ${data.user.username} (${data.user.role})`;
+            loadDashboard();
+        }
+
+        async function logoutAdmin() {
+            await fetch('/api/auth/logout', {
+                method: 'POST',
+                headers: headers(),
+            });
+            tokenInput.value = '';
+            localStorage.removeItem('botai_admin_token');
+            document.getElementById('loginStatus').textContent = 'Đã đăng xuất.';
+            loadDashboard();
+        }
+
+        async function addUser() {
+            const status = document.getElementById('userStatus');
+            const payload = {
+                username: document.getElementById('newUsername').value.trim(),
+                password: document.getElementById('newPassword').value,
+                role: document.getElementById('newRole').value,
+            };
+            if (!payload.username || !payload.password) {
+                status.textContent = 'Nhập username và mật khẩu.';
+                return;
+            }
+            const response = await fetch('/api/admin/users', {
+                method: 'POST',
+                headers: { ...headers(), 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+            const data = await response.json();
+            if (!data.ok) {
+                status.textContent = `Lỗi: ${data.error}`;
+                return;
+            }
+            document.getElementById('newUsername').value = '';
+            document.getElementById('newPassword').value = '';
+            document.getElementById('newRole').value = 'user';
+            status.textContent = `Đã tạo user #${data.id}`;
+            loadDashboard();
+        }
+
+        function resetBotForm() {
+            editingBotId = null;
+            document.getElementById('botName').value = '';
+            document.getElementById('botDescription').value = '';
+            document.getElementById('botPrompt').value = '';
+            document.getElementById('addBotBtn').textContent = 'Tạo bot';
+            document.getElementById('cancelBotEditBtn').style.display = 'none';
+        }
+
+        function startEditBot(id) {
+            const bot = (window._adminBots || []).find((item) => Number(item.id) === Number(id));
+            if (!bot) return;
+            editingBotId = id;
+            document.getElementById('botName').value = bot.name || '';
+            document.getElementById('botDescription').value = bot.description || '';
+            document.getElementById('botPrompt').value = bot.system_prompt || '';
+            document.getElementById('addBotBtn').textContent = 'Lưu bot';
+            document.getElementById('cancelBotEditBtn').style.display = '';
+            document.getElementById('botStatus').textContent = `Đang sửa bot #${id}`;
+        }
+
+        async function addBot() {
+            const status = document.getElementById('botStatus');
+            const payload = {
+                name: document.getElementById('botName').value.trim(),
+                description: document.getElementById('botDescription').value.trim(),
+                system_prompt: document.getElementById('botPrompt').value.trim(),
+            };
+            if (!payload.name) {
+                status.textContent = 'Nhập tên bot trước.';
+                return;
+            }
+            const currentEditId = editingBotId;
+            const response = await fetch(currentEditId ? `/api/admin/bots/${currentEditId}` : '/api/admin/bots', {
+                method: currentEditId ? 'PUT' : 'POST',
+                headers: { ...headers(), 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+            const data = await response.json();
+            if (!data.ok) {
+                status.textContent = `Lỗi: ${data.error}`;
+                return;
+            }
+            const savedId = currentEditId || data.id;
+            resetBotForm();
+            status.textContent = currentEditId ? `Đã cập nhật bot #${savedId}` : `Đã tạo bot #${savedId}`;
+            loadDashboard();
+        }
+
+        function resetEvalForm() {
+            editingEvalCaseId = null;
+            document.getElementById('evalQuestion').value = '';
+            document.getElementById('evalExpectedAnswer').value = '';
+            document.getElementById('evalExpectedSource').value = '';
+            document.getElementById('evalShouldHaveSource').checked = true;
+            document.getElementById('addEvalCaseBtn').textContent = 'Thêm test case';
+            document.getElementById('cancelEvalEditBtn').style.display = 'none';
+        }
+
+        function startEditEvalCase(id) {
+            const item = (window._adminEvalCases || []).find((caseItem) => Number(caseItem.id) === Number(id));
+            if (!item) return;
+            editingEvalCaseId = id;
+            document.getElementById('evalQuestion').value = item.question || '';
+            document.getElementById('evalExpectedAnswer').value = (item.expected_contains || []).join('\n');
+            document.getElementById('evalExpectedSource').value = (item.expected_source_contains || []).join('\n');
+            document.getElementById('evalShouldHaveSource').checked = Boolean(item.should_have_source);
+            document.getElementById('addEvalCaseBtn').textContent = 'Lưu test case';
+            document.getElementById('cancelEvalEditBtn').style.display = '';
+            document.getElementById('evalCaseStatus').textContent = `Đang sửa test case #${id}`;
+        }
+
+        async function addEvalCase() {
+            const status = document.getElementById('evalCaseStatus');
+            const questionInput = document.getElementById('evalQuestion');
+            const question = questionInput.value.trim();
+            if (!question) {
+                status.textContent = 'Nhập câu hỏi kiểm thử trước.';
+                return;
+            }
+            const payload = {
+                question,
+                expected_contains: splitLines(document.getElementById('evalExpectedAnswer').value),
+                expected_source_contains: splitLines(document.getElementById('evalExpectedSource').value),
+                should_have_source: document.getElementById('evalShouldHaveSource').checked,
+            };
+            const currentEditId = editingEvalCaseId;
+            status.textContent = currentEditId ? 'Đang cập nhật test case...' : 'Đang thêm test case...';
+            const response = await fetch(currentEditId ? `/api/admin/eval/cases/${currentEditId}` : '/api/admin/eval/cases', {
+                method: currentEditId ? 'PUT' : 'POST',
+                headers: { ...headers(), 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload),
+            });
+            const data = await response.json();
+            if (data.error) {
+                status.textContent = `Lỗi: ${data.error}`;
+                return;
+            }
+            const savedId = currentEditId || data.id;
+            resetEvalForm();
+            status.textContent = currentEditId ? `Đã cập nhật test case #${savedId}` : `Đã thêm test case #${savedId}`;
+            loadDashboard();
+        }
+
+        async function runEval() {
+            const button = document.getElementById('runEvalBtn');
+            const summary = document.getElementById('evalSummary');
+            button.disabled = true;
+            summary.textContent = 'Đang chạy eval...';
+            try {
+                const response = await fetch('/api/admin/eval/run', {
+                    method: 'POST',
+                    headers: { ...headers(), 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ bot_id: Number(document.getElementById('evalBotSelect').value || 1) }),
+                });
+                const data = await response.json();
+                if (data.error) throw new Error(data.error);
+                summary.textContent = `Pass ${data.passed}/${data.total}, ${data.response_time_ms} ms`;
+                document.getElementById('evalBody').innerHTML = data.items.map((item) => `
+                    <tr>
+                        <td>${item.ok ? 'Đạt' : 'Lỗi'}</td>
+                        <td>${truncate(item.question, 160)}</td>
+                        <td>${(item.missing_answer || []).join(', ')}</td>
+                        <td>${(item.missing_source || []).join(', ')}</td>
+                        <td>${item.response_time_ms}</td>
+                    </tr>
+                `).join('');
+                loadDashboard();
+            } catch (error) {
+                summary.textContent = `Lỗi eval: ${error.message}`;
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        async function debugRetrieve() {
+            const button = document.getElementById('debugRetrieveBtn');
+            const summary = document.getElementById('debugSummary');
+            const question = document.getElementById('debugQuestion').value.trim();
+            if (!question) {
+                summary.textContent = 'Nhập câu hỏi trước.';
+                return;
+            }
+            button.disabled = true;
+            summary.textContent = 'Đang kiểm tra nguồn...';
+            try {
+                const response = await fetch('/api/admin/retrieve/debug', {
+                    method: 'POST',
+                    headers: { ...headers(), 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ question, top_k: 8, bot_id: Number(document.getElementById('debugBotSelect').value || 1) }),
+                });
+                const data = await response.json();
+                if (data.error) throw new Error(data.message || data.error);
+                summary.textContent = `Intent: ${data.intent}, relevance: ${data.retrieval_relevance}`;
+                document.getElementById('debugBody').innerHTML = data.items.map((item) => `
+                    <tr>
+                        <td>${item.rank}</td>
+                        <td>${item.source}</td>
+                        <td>${item.pdf_page || ''}</td>
+                        <td><span class="pill">${item.type || ''}</span></td>
+                        <td>${item.channel || ''}</td>
+                        <td>${item.rerank_score ?? item.source_score}</td>
+                        <td>${truncate(item.source_line, 180)}</td>
+                        <td class="debug-preview">${truncate(item.preview, 360)}</td>
+                    </tr>
+                `).join('');
+            } catch (error) {
+                summary.textContent = `Lỗi debug: ${error.message}`;
+            } finally {
+                button.disabled = false;
+            }
+        }
+
+        document.getElementById('refreshBtn').addEventListener('click', loadDashboard);
+        document.getElementById('loginBtn').addEventListener('click', loginAdmin);
+        document.getElementById('logoutBtn').addEventListener('click', logoutAdmin);
+        document.getElementById('uploadBtn').addEventListener('click', uploadDocument);
+        document.getElementById('addUrlBtn').addEventListener('click', addUrlDocument);
+        document.getElementById('addUserBtn').addEventListener('click', addUser);
+        document.getElementById('addBotBtn').addEventListener('click', addBot);
+        document.getElementById('cancelBotEditBtn').addEventListener('click', resetBotForm);
+        document.getElementById('addEvalCaseBtn').addEventListener('click', addEvalCase);
+        document.getElementById('cancelEvalEditBtn').addEventListener('click', resetEvalForm);
+        document.getElementById('runEvalBtn').addEventListener('click', runEval);
+        document.getElementById('debugRetrieveBtn').addEventListener('click', debugRetrieve);
+        loadDashboard();
+    </script>
+</body>
+</html>

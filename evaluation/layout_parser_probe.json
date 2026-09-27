@@ -1,0 +1,20 @@
+{
+  "source_pdf": "D:\\BotAI\\scan.pdf",
+  "page": 1,
+  "sample_pdf": "D:\\BotAI\\evaluation\\layout_parser_probe\\scan_page_1.pdf",
+  "docling": {
+    "ok": true,
+    "elapsed_s": 21.86,
+    "chars": 2457,
+    "preview": "## CHUONG 4: TRIN KHAI H THÓNG VÀ ĐÁNH GIÁ THUC NGHIÊM ## 4.1. Môi trưòng và cu hình thc nghim ## 4.1.1. Cu hinh phn crng tąi nút biên H thng đưc th nghim trên mt máy ch đc lp đóng vai trò là trung tâm dū liu thu nho, mô phong li môi trưòng trm x lý biên cùa lc lương cành sát giao thông ti các nút giao thông lón. Vic la chon cu hinh đưc tính toán k lưõng da trên bài toán dim nghēn dū liu gia b x lý trung tâm CPU và b x lý đ ha GPU. Bng 4.1. Cu hinh phn cng máy tinh thc nghim | Linh kin | Thông s"
+  },
+  "mineru": {
+    "ok": true,
+    "elapsed_s": 8.6793,
+    "returncode": 0,
+    "chars": 1852,
+    "preview": "# CHUONG 4: TRIN KHAI H THÓNG VÀ ĐÁNH GIÁ THUCNGHIÊM ## 4.1. Môi trưòng và cu hình thc nghim ## 4.1.1. Cu hình phn cng ti nút biên H thông đưc th nghim trên mt máy ch đc lp đóng vai trò là trung tâm d liu thu nh, mô phông li môi trưòng trm x lý biên ca lc lưng cnh sát giao thông ti các nút giao thông lón. Vic la chn cu hình đưc tính toán k lưõng da trên bài toán đim nghn d liu gia b x lý trung tâm CPU và b x lý đ ha GPU. Bng 4.1. Cu hinh phn cng máy tính thc nghim ``` Linh kin Thông s k thut chi",
+    "stdout_tail": "Parsed 1 input(s).\n",
+    "stderr_tail": ":120 - Hybrid processing-window run. page_count=1, window_size=64, total_windows=1\n2026-09-25 16:15:48.206 | INFO     | mineru.backend.analysis.pdf.window:_log_processing_window:128 - Hybrid processing window 1/1: pages 1-1/1 (1 pages)\n\nLayout Predict:   0%|          | 0/1 [00:00<?, ?it/s]\nLayout Predict: 100%|██████████| 1/1 [00:00<00:00,  1.19it/s]\nLayout Predict: 100%|██████████| 1/1 [00:00<00:00,  1.19it/s]\n\nOCR-det:   0%|          | 0/6 [00:00<?, ?it/s]\nOCR-det:  67%|██████▋   | 4/6 [00:00<00:00, 34.78it/s]\nOCR-det: 100%|██████████| 6/6 [00:00<00:00, 41.96it/s]\n\nOCR-rec Predict:   0%|          | 0/11 [00:00<?, ?it/s]\nOCR-rec Predict:  55%|█████▍    | 6/11 [00:00<00:00, 16.58it/s]\nOCR-rec Predict: 100%|██████████| 11/11 [00:00<00:00, 16.06it/s]\nOCR-rec Predict: 100%|██████████| 11/11 [00:00<00:00, 16.15it/s]\n2026-09-25 16:15:50.992 | INFO     | mineru.backend.analyze:_log_infer_performance:26 - model_list infer finished, file_suffix=pdf, pages=1, cost=3.591305s, speed=0.278 page/s\n"
+  }
+}

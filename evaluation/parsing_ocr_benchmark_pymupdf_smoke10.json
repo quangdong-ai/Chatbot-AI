@@ -1,0 +1,489 @@
+{
+  "page_set": "D:\\BotAI\\evaluation\\parsing_ocr_page_candidates.json",
+  "ground_truth": "",
+  "engines": [
+    "pymupdf"
+  ],
+  "summary": {
+    "pymupdf": {
+      "pages": 10,
+      "ok": 10,
+      "failed": 0,
+      "avg_latency_sec": 0.1645,
+      "avg_text_chars": 1551.1,
+      "table_pages": 8
+    }
+  },
+  "results": [
+    {
+      "document": "scan.pdf",
+      "path": "D:\\BotAI\\scan.pdf",
+      "page": 1,
+      "categories": [
+        "low_text_scan_candidate"
+      ],
+      "source_features": {
+        "document": "scan.pdf",
+        "path": "D:\\BotAI\\scan.pdf",
+        "page": 1,
+        "score": 40,
+        "categories": [
+          "low_text_scan_candidate"
+        ],
+        "text_chars": 0,
+        "word_count": 0,
+        "block_count": 1,
+        "image_count": 1,
+        "table_count": 0,
+        "line_like_count": 0,
+        "legal_marker_count": 0,
+        "digit_ratio": 0.0,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": ""
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.0056,
+          "text": "",
+          "text_chars": 0,
+          "word_count": 0,
+          "table_count": 0,
+          "engine_metadata": {},
+          "preview": ""
+        }
+      ]
+    },
+    {
+      "document": "scan.pdf",
+      "path": "D:\\BotAI\\scan.pdf",
+      "page": 2,
+      "categories": [
+        "low_text_scan_candidate"
+      ],
+      "source_features": {
+        "document": "scan.pdf",
+        "path": "D:\\BotAI\\scan.pdf",
+        "page": 2,
+        "score": 40,
+        "categories": [
+          "low_text_scan_candidate"
+        ],
+        "text_chars": 0,
+        "word_count": 0,
+        "block_count": 1,
+        "image_count": 1,
+        "table_count": 0,
+        "line_like_count": 0,
+        "legal_marker_count": 0,
+        "digit_ratio": 0.0,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": ""
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.0007,
+          "text": "",
+          "text_chars": 0,
+          "word_count": 0,
+          "table_count": 0,
+          "engine_metadata": {},
+          "preview": ""
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 202,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "image_mixed_text",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 202,
+        "score": 116,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "image_mixed_text",
+          "complex_layout"
+        ],
+        "text_chars": 2380,
+        "word_count": 557,
+        "block_count": 24,
+        "image_count": 6,
+        "table_count": 1,
+        "line_like_count": 0,
+        "legal_marker_count": 11,
+        "digit_ratio": 0.0164,
+        "rotation": 0,
+        "aspect_ratio": 0.707,
+        "preview": "6 10 Hạng BE cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng B kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 11 Hạng C1E cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng C1 kéo rơ moóc có khối lượng toà"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.2484,
+          "text": "6 10 Hạng BE cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng B kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 11 Hạng C1E cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng C1 kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 12 Hạng CE cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng C kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; xe ô tô đầu kéo kéo sơ mi rơ moóc; 13 Hạng D1E cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng D1 kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 14 Hạng D2E cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng D2 kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 15 Hạng DE cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng D kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; xe ô tô chở khách nối toa. 2. Điều kiện hạn chế a) Đối với giấy phép lái xe hạng B chuyển số tự động (bao gồm cả xe ô tô điện) ghi là: “Cấp cho người chỉ được điều khiển xe ô tô chuyển số tự động (bao gồm cả xe ô tô điện)”; b) Đối với giấy phép lái xe hạng A1 cấp cho người khuyết tật điều khiển xe mô tô ba bánh dùng cho người khuyết tật, ghi là: “Cấp cho người khuyết tật chỉ được điều khiển xe mô tô ba bánh bánh dùng cho người khuyết tật”; c) Đối với giấy phép lái xe hạng B hộp chuyển số tự động (bao gồm cả xe ô tô điện) cấp cho người khuyết tật tay trái, ghi là: “Cấp cho người khuyết tật tay trái chỉ được điều khiển xe ô tô chuyển số tự động (bao gồm cả xe ô tô điện) có cơ cấu điều khiển đèn pha, đèn xi nhan phù hợp với người khuyết tật tay trái.”; d) Đối với giấy phép lái xe hạng B số tự động cấp cho người khuyết tật tay phải, ghi là: “Cấp cho người khuyết tật tay phải chỉ được điều khiển xe ô tô số tự động có cơ cấu điều khiển đèn pha, đèn xi nhan phù hợp với người khuyết tật tay phải.”; đ) Đối với giấy phép lái xe hạng B số tự động cấp cho người khuyết tật chân phải, ghi là: “Cấp cho người khuyết tật tay trái chỉ được điều khiển xe ô tô số tự động có cơ cấu điều khiển ga động cơ, phanh chân phù hợp với với người khuyết tật chân phải.”; e) Đối với giấy phép lái xe hạng B số tự động cấp cho người khuyết tật nói chung (trừ khuyết tật tay trái, tay phải, chân phải), ghi là: “Cấp cho người khuyết tật nói chung chỉ được điều khiển xe ô tô số tự động”;",
+          "text_chars": 2380,
+          "word_count": 557,
+          "table_count": 1,
+          "engine_metadata": {},
+          "preview": "6 10 Hạng BE cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng B kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 11 Hạng C1E cấp cho người lái các loại xe ô tô quy định cho giấy phép lái xe hạng C1 kéo rơ moóc có khối lượng toàn bộ theo thiết kế trên 750 kg; 12 Hạng CE cấp cho người lái các loại xe ô tô quy định cho giấy phép"
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 22,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 22,
+        "score": 98,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 2252,
+        "word_count": 512,
+        "block_count": 18,
+        "image_count": 0,
+        "table_count": 2,
+        "line_like_count": 0,
+        "legal_marker_count": 8,
+        "digit_ratio": 0.0124,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": "22 4. Sát hạch lái xe ô tô bằng phần mềm mô phỏng các tình huống giao thông đối với các hạng B, C1, C, D1, D2, D, BE, C1E, CE, D1E, D2E, DE: người dự sát hạch phát hiện các thời điểm có nguy cơ mất an toàn giao thông thông qua việc quan sát các tình huống mô p"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.2677,
+          "text": "22 4. Sát hạch lái xe ô tô bằng phần mềm mô phỏng các tình huống giao thông đối với các hạng B, C1, C, D1, D2, D, BE, C1E, CE, D1E, D2E, DE: người dự sát hạch phát hiện các thời điểm có nguy cơ mất an toàn giao thông thông qua việc quan sát các tình huống mô phỏng xuất hiện trên máy tính. 5. Quy trình sát hạch lái xe a) Hạng A1 và A thực hiện theo quy định tại Phụ lục XIII ban hành kèm theo Thông tư này; b) Hạng B1 thực hiện theo quy định tại Phụ lục XIV ban hành kèm theo Thông tư này; c) Các hạng B, C1, C, D1, D2, D thực hiện theo quy định tại Phụ lục XV ban hành kèm theo Thông tư này; các hạng BE, D1E, D2E, DE thực hiện theo quy định tại Phụ lục XVI ban hành kèm theo Thông tư này; hạng C1E, CE thực hiện theo quy định tại Phụ lục XVII ban hành kèm theo Thông tư này. Điều 18. Tiêu chuẩn kỹ thuật sân tập lái dùng để sát hạch lái xe 1. Đối với sân tập lái dùng để sát hạch lái xe trang bị máy tính để sát hạch lý thuyết và thiết bị chấm điểm tự động để sát hạch lái xe trong hình Sân tập lái dùng để sát hạch lái xe mô tô phải đáp ứng các yêu cầu kỹ thuật theo quy định của Quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ, gồm: hình của các bài sát hạch, xe sát hạch, thiết bị sát hạch lý thuyết, thiết bị sát hạch thực hành lái xe trong hình, phòng chờ sát hạch, phòng sát hạch lý thuyết, phòng điều hành thiết bị chấm điểm thực hành lái xe trong hình. 2. Đối với sân tập lái dùng để sát hạch lái xe tổ chức sát hạch lý thuyết bằng phương pháp trắc nghiệm trên giấy Sân tập lái dùng để sát hạch lái xe mô tô phải đáp ứng các yêu cầu kỹ thuật theo quy định của Quy chuẩn kỹ thuật quốc gia về trung tâm sát hạch lái xe cơ giới đường bộ, gồm: hình của các bài sát hạch, xe sát hạch, phòng chờ sát hạch, phòng sát hạch lý thuyết. Điều 19. Hội đồng sát hạch 1. Hội đồng sát hạch do Sở Giao thông vận tải thành lập. a) Hội đồng làm việc phải có tối thiểu 2/3 số thành viên tham dự, quyết định theo đa số; trường hợp các thành viên trong hội đồng có ý kiến ngang nhau thì thực hiện theo kết luận của Chủ tịch hội đồng; b) Hội đồng sát hạch tự giải thể khi kết thúc kỳ sát hạch. 2. Thành phần của Hội đồng sát hạch a) Chủ tịch hội đồng là công chức và là sát hạch viên thuộc Sở Giao thông vận tải, có giấy phép lái xe ô tô;",
+          "text_chars": 2252,
+          "word_count": 512,
+          "table_count": 2,
+          "engine_metadata": {},
+          "preview": "22 4. Sát hạch lái xe ô tô bằng phần mềm mô phỏng các tình huống giao thông đối với các hạng B, C1, C, D1, D2, D, BE, C1E, CE, D1E, D2E, DE: người dự sát hạch phát hiện các thời điểm có nguy cơ mất an toàn giao thông thông qua việc quan sát các tình huống mô phỏng xuất hiện trên máy tính. 5. Quy trình sát hạch lái xe a) Hạng A1 và A thực hiện theo quy định t"
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 17,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 17,
+        "score": 97,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 1990,
+        "word_count": 453,
+        "block_count": 18,
+        "image_count": 0,
+        "table_count": 1,
+        "line_like_count": 0,
+        "legal_marker_count": 15,
+        "digit_ratio": 0.0121,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": "17 3. Ban hành giáo trình đào tạo, chương trình chi tiết. 4. Quy trình biên soạn, thẩm định và ban hành giáo trình đào tạo, chương trình chi tiết thực hiện theo quy định tại Phụ lục X ban hành kèm theo Thông tư này. Điều 12. Đào tạo đối với người khuyết tật 1."
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.1391,
+          "text": "17 3. Ban hành giáo trình đào tạo, chương trình chi tiết. 4. Quy trình biên soạn, thẩm định và ban hành giáo trình đào tạo, chương trình chi tiết thực hiện theo quy định tại Phụ lục X ban hành kèm theo Thông tư này. Điều 12. Đào tạo đối với người khuyết tật 1. Đào tạo để sát hạch, cấp giấy phép lái xe hạng A1 cho người khuyết tật điều khiển xe mô tô ba bánh dùng cho người khuyết tật a) Người học lái xe lựa chọn hình thức đào tạo lái xe theo quy định tại khoản 1 Điều 5 Thông tư này; b) Phải học đủ nội dung và chương trình theo quy định tại Điều 6 Thông tư này. 2. Đào tạo để sát hạch, cấp giấy phép lái xe hạng B số tự động a) Đào tạo để sát hạch, cấp giấy phép lái xe hạng B số tự động cho người khuyết tật bàn chân phải hoặc bàn tay phải hoặc bàn tay trái: Người học lái xe lựa chọn hình thức đào tạo lái xe theo quy định tại khoản 2 Điều 5 Thông tư này. Người học lái xe phải học đủ nội dung và chương trình theo quy định tại Điều 7 Thông tư này; được thay nội dung học lái xe trên ca bin học lái xe ô tô bằng nội dung học trên xe tập lái; b) Đào tạo để sát hạch, cấp giấy phép lái xe hạng B số tự động cho người khuyết tật trừ người khuyết tật bàn chân phải hoặc bàn tay phải hoặc bàn tay trái: Người học lái xe lựa chọn hình thức đào tạo lái xe theo quy định tại khoản 2 Điều 5 Thông tư này. Người học lái xe phải học đủ nội dung và chương trình theo quy định tại Điều 7 Thông tư này. Điều 13. Đào tạo lái xe mô tô hạng A1 đối với người dân tộc thiểu số không biết đọc, viết tiếng Việt 1. Hình thức đào tạo: người có nhu cầu cấp giấy phép lái xe phải đăng ký tại cơ sở đào tạo lái xe để được ôn luyện theo chương trình đào tạo lái xe quy định tại Điều 6 và Mục A Phụ lục II ban hành kèm theo Thông tư này. Lớp học cho người dân tộc thiểu số không biết đọc, viết tiếng Việt phải giảng dạy riêng và có người phiên dịch tiếng dân tộc thiểu số. 2.Phương pháp đào tạo: bằng hình ảnh trực quan, tranh vẽ hệ thống biển báo hiệu đường bộ, mô hình, sa hình và kỹ năng xử lý tình huống giao",
+          "text_chars": 1990,
+          "word_count": 453,
+          "table_count": 1,
+          "engine_metadata": {},
+          "preview": "17 3. Ban hành giáo trình đào tạo, chương trình chi tiết. 4. Quy trình biên soạn, thẩm định và ban hành giáo trình đào tạo, chương trình chi tiết thực hiện theo quy định tại Phụ lục X ban hành kèm theo Thông tư này. Điều 12. Đào tạo đối với người khuyết tật 1. Đào tạo để sát hạch, cấp giấy phép lái xe hạng A1 cho người khuyết tật điều khiển xe mô tô ba bánh "
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 48,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 48,
+        "score": 97,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 1901,
+        "word_count": 422,
+        "block_count": 26,
+        "image_count": 0,
+        "table_count": 3,
+        "line_like_count": 0,
+        "legal_marker_count": 11,
+        "digit_ratio": 0.0137,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": "48 Phần IV ĐÀO TẠO, KIỂM TRA, CẤP CHỨNG CHỈ BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE MÁY CHUYÊN DÙNG THAM GIA GIAO THÔNG ĐƯỜNG BỘ Chương I ĐÀO TẠO, BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.5302,
+          "text": "48 Phần IV ĐÀO TẠO, KIỂM TRA, CẤP CHỨNG CHỈ BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE MÁY CHUYÊN DÙNG THAM GIA GIAO THÔNG ĐƯỜNG BỘ Chương I ĐÀO TẠO, BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE MÁY CHUYÊN DÙNG THAM GIA GIAO THÔNG ĐƯỜNG BỘ Điều 46. Hình thức, chương trình đào tạo kiến thức pháp luật về giao thông đường bộ 1. Người học bồi dưỡng kiến thức pháp luật về giao thông đường bộ phải được đào tạo tại cơ sở đào tạo lái xe ô tô hoặc cơ sở đào tạo người điều khiển xe máy chuyên dùng. 2. Chương trình đào tạo kiến thức pháp luật về giao thông đường bộ TT Nội dung chương trình Số giờ 1 Pháp luật về giao thông đường bộ 12 2 Quy chuẩn kỹ thuật quốc gia về báo hiệu đường bộ 5 3 Quy định về tốc độ và khoảng cách an toàn của xe cơ giới, xe máy chuyên dùng tham gia giao thông trên đường bộ 3 4 Quy định về xử lý vi phạm hành chính trong lĩnh vực giao thông đường bộ. 4 5 Quy định về cấp đăng ký, biển số; kiểm định xe máy chuyên dùng tham gia giao thông đường bộ 3 6 Ôn tập và kiểm tra 5 Tổng thời gian đào tạo 32 Điều 47. Tiêu chuẩn của cơ sở đào tạo người điều khiển xe máy chuyên dùng thực hiện bồi dưỡng, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ Cơ sở đào tạo người điều khiển xe máy chuyên dùng thực hiện bồi dưỡng, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ phải có đủ phòng học luật về giao thông đường bộ có đủ tài liệu giảng dạy, sa hình và hệ thống biển báo hiệu giao thông đường bộ theo quy định. Điều 48. Tổ chức đào tạo pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng tham gia giao thông đường bộ 1. Báo cáo mở lớp bồi dưỡng kiến thức pháp luật về giao thông đường bộ: cơ sở đào tạo lái xe ô tô hoặc cơ sở đào tạo người điều khiển xe máy chuyên dùng tiếp nhận hồ sơ của cá nhân đảm bảo yêu cầu về điều kiện theo quy định",
+          "text_chars": 1901,
+          "word_count": 422,
+          "table_count": 3,
+          "engine_metadata": {},
+          "preview": "48 Phần IV ĐÀO TẠO, KIỂM TRA, CẤP CHỨNG CHỈ BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE MÁY CHUYÊN DÙNG THAM GIA GIAO THÔNG ĐƯỜNG BỘ Chương I ĐÀO TẠO, BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE MÁY CHUYÊN DÙNG THAM GIA GIAO THÔNG ĐƯỜNG BỘ Điều 46. Hình thức, chương trình đào tạo kiến thức phá"
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 50,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 50,
+        "score": 97,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 1537,
+        "word_count": 359,
+        "block_count": 26,
+        "image_count": 0,
+        "table_count": 1,
+        "line_like_count": 0,
+        "legal_marker_count": 15,
+        "digit_ratio": 0.0189,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": "50 Điều 51. Lưu trữ hồ sơ kết quả kiểm tra 1. Cơ sở đào tạo lái xe ô tô hoặc cơ sở đào tạo người điều khiển xe máy chuyên dùng a) Báo cáo mở lớp bồi dưỡng kiến thức pháp luật về giao thông đường bộ; b) Danh sách thí sinh tham dự kiểm tra; c) Quyết định tổ chức"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.1126,
+          "text": "50 Điều 51. Lưu trữ hồ sơ kết quả kiểm tra 1. Cơ sở đào tạo lái xe ô tô hoặc cơ sở đào tạo người điều khiển xe máy chuyên dùng a) Báo cáo mở lớp bồi dưỡng kiến thức pháp luật về giao thông đường bộ; b) Danh sách thí sinh tham dự kiểm tra; c) Quyết định tổ chức kiểm tra; d) Sổ cấp chứng chỉ. 2. Sở Giao thông vận tải Lưu trữ hồ sơ và các tài liệu quy định tại điểm a khoản 1 Điều này và điểm a khoản 2 Điều 4 Thông tư này. 3. Thời gian lưu trữ tài liệu a) Không thời hạn đối với Sổ cấp chứng chỉ; b) 02 năm đối với tài liệu quy định tại điểm a, điểm b, điểm d khoản 1 Điều này. Chương II CẤP, CẤP LẠI CHỨNG CHỈ BỒI DƯỠNG KIẾN THỨC PHÁP LUẬT VỀ GIAO THÔNG ĐƯỜNG BỘ CHO NGƯỜI ĐIỀU KHIỂN XE MÁY CHUYÊN DÙNG THAM GIA GIAO THÔNG ĐƯỜNG BỘ Điều 52. Cấp chứng chỉ Sau 05 ngày làm việc, kể từ ngày kết quả kiểm tra đạt yêu cầu, người đứng đầu cơ sở đào tạo lái xe ô tô hoặc cơ sở đào tạo người điều khiển xe máy chuyên dùng cấp chứng chỉ cho người học.thanh Điều 53. Cấp lại chứng chỉ 1. Người có chứng chỉ bị hỏng hoặc có sự sai lệch về thông tin có tên trong hồ sơ lưu trữ tại nơi cấp chứng chỉ sẽ được cấp lại theo số hiệu chứng chỉ đã cấp. a) Hồ sơ đề nghị cấp lại, bao gồm: đơn đề nghị cấp lại chứng chỉ theo mẫu quy định tại Phụ lục XXXV ban hành kèm theo Thông tư này; b) 03 ảnh màu kích thước 2x3 cm chụp không quá 06 tháng. 2. Người có chứng chỉ bị mất có tên trong hồ sơ lưu trữ tại nơi cấp chứng chỉ sẽ được cấp lại theo số hiệu chứng chỉ đã cấp Hồ sơ cấp lại thực hiện theo quy định tại điểm a khoản 1 Điều này. 3. Trình tự thực hiện:",
+          "text_chars": 1537,
+          "word_count": 359,
+          "table_count": 1,
+          "engine_metadata": {},
+          "preview": "50 Điều 51. Lưu trữ hồ sơ kết quả kiểm tra 1. Cơ sở đào tạo lái xe ô tô hoặc cơ sở đào tạo người điều khiển xe máy chuyên dùng a) Báo cáo mở lớp bồi dưỡng kiến thức pháp luật về giao thông đường bộ; b) Danh sách thí sinh tham dự kiểm tra; c) Quyết định tổ chức kiểm tra; d) Sổ cấp chứng chỉ. 2. Sở Giao thông vận tải Lưu trữ hồ sơ và các tài liệu quy định tại "
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 8,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 8,
+        "score": 96,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 1926,
+        "word_count": 454,
+        "block_count": 28,
+        "image_count": 0,
+        "table_count": 1,
+        "line_like_count": 0,
+        "legal_marker_count": 7,
+        "digit_ratio": 0.0509,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": "8 1 Thời gian học thực hành lái xe trên sân tập lái của 01 học viên giờ 41 41 43 2 Thời gian thực hành lái xe trên đường giao thông của 01 học viên giờ 24 40 48 3 Số giờ thực hành trên ca bin học lái xe ô tô/01 học viên giờ 2 2 2 4 Tổng quãng đường đào tạo thự"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.0996,
+          "text": "8 1 Thời gian học thực hành lái xe trên sân tập lái của 01 học viên giờ 41 41 43 2 Thời gian thực hành lái xe trên đường giao thông của 01 học viên giờ 24 40 48 3 Số giờ thực hành trên ca bin học lái xe ô tô/01 học viên giờ 2 2 2 4 Tổng quãng đường đào tạo thực hành của 01 học viên km 1.000 1.100 1.100 Trong đó Quãng đường học thực hành lái xe trên sân tập lái của 01 học viên km 290 290 275 Quãng đường thực hành lái xe trên đường giao thông của 01 học viên km 710 810 825 III. Tổng thời gian đào tạo giờ 203 235 245 2. Tổ chức khóa đào tạo a) Cơ sở đào tạo lái xe căn cứ các nội dung gồm: khối lượng chương trình và phân bổ thời gian đào tạo quy định tại khoản 1 Điều này và Phụ lục II ban hành kèm theo Thông tư này; thời gian ôn tập, kiểm tra hết môn và nghỉ lễ, Tết để xây dựng tổng thời gian khóa đào tạo trong chương trình đào tạo lái xe không quá 90 ngày; b) Số học viên học thực hành lái xe được quy định cho một xe tập lái: hạng B không quá 05 học viên, hạng C1 không quá 08 học viên; trong đó, quãng đường tập lái xe được tính cho từng học viên và thời gian tập lái xe trên sân tập lái được tính cho nhóm học viên trên xe tập lái. 3. Báo cáo đăng ký sát hạch Cơ sở đào tạo lái xe tiếp nhận hồ sơ của người học lái xe đảm bảo đủ điều kiện và thành phần hồ sơ theo quy định tại Điều 14, Điều 15 Thông tư này; lập báo cáo đăng ký sát hạch (báo cáo 1) gửi Sở Giao thông vận tải bằng một trong các hình thức: trực tiếp, dịch vụ bưu chính, trên môi trường điện tử đồng thời truyền dữ liệu qua hệ thống thông tin giấy phép lái xe: a) Đào tạo lái xe các hạng B, C1: cơ sở đào tạo lái xe lập báo cáo đăng ký sát hạch lái xe, danh sách học viên (báo cáo 1), kế hoạch đào tạo theo quy định tại Mẫu số 01, Mẫu số 02, Mẫu số 04 Phụ lục IV ban hành kèm theo Thông tư này gửi Sở Giao thông vận tải; báo cáo phải có dấu giáp lai của cơ sở đào tạo lái xe; b) Báo cáo 1 các hạng B, C1 không quá 07 ngày làm việc sau khai giảng; Thủ",
+          "text_chars": 1926,
+          "word_count": 454,
+          "table_count": 1,
+          "engine_metadata": {},
+          "preview": "8 1 Thời gian học thực hành lái xe trên sân tập lái của 01 học viên giờ 41 41 43 2 Thời gian thực hành lái xe trên đường giao thông của 01 học viên giờ 24 40 48 3 Số giờ thực hành trên ca bin học lái xe ô tô/01 học viên giờ 2 2 2 4 Tổng quãng đường đào tạo thực hành của 01 học viên km 1.000 1.100 1.100 Trong đó Quãng đường học thực hành lái xe trên sân tập l"
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 77,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 77,
+        "score": 94,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 1485,
+        "word_count": 336,
+        "block_count": 21,
+        "image_count": 0,
+        "table_count": 1,
+        "line_like_count": 0,
+        "legal_marker_count": 6,
+        "digit_ratio": 0.0121,
+        "rotation": 0,
+        "aspect_ratio": 0.707,
+        "preview": "3 III. Nội dung dạy thực hành lái xe 1. Mục đích, yêu cầu 1.1. Mục đích Để thiết kế các bài giảng Môn học thực hành lái xe, nhằm trang bị cho người học lái xe: - Các kỹ năng cơ bản lái xe an toàn, kỹ năng lái xe chở hàng, có khả năng điều khiển xe mô tô các hạ"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.0838,
+          "text": "3 III. Nội dung dạy thực hành lái xe 1. Mục đích, yêu cầu 1.1. Mục đích Để thiết kế các bài giảng Môn học thực hành lái xe, nhằm trang bị cho người học lái xe: - Các kỹ năng cơ bản lái xe an toàn, kỹ năng lái xe chở hàng, có khả năng điều khiển xe mô tô các hạng A1, A, ở các điều kiện giao thông khác nhau. 1.2. Yêu cầu Thông qua môn học Thực hành lái xe người học: Có kỹ năng lái xe an toàn để điều khiển xe trong các điều kiện giao thông khác nhau, xử lý được các tình huống giao thông trên đường an toàn. 2. Nội dung TT NỘI DUNG 1 Tập lái xe trong sân tập lái 2 Tập lái xe trong hình 3 Tập phanh gấp 4 Tập lái vòng cua B. CHƯƠNG TRÌNH KHUNG ĐÀO TẠO LÁI XE MÔ TÔ HẠNG B1 I. Môn học Pháp luật về giao thông đường bộ 1. Mục đích, yêu cầu 1.1. Mục đích a) Để thiết kế các bài giảng Môn học Pháp luật về giao thông đường bộ, nhằm trang bị cho học viên những kiến thức cơ bản về Pháp luật về giao thông đường bộ, hệ thống báo hiệu đường bộ và phương pháp xử lý các tình huống khi tham gia giao thông; b) Thông qua Môn học Pháp luật về giao thông đường bộ sẽ xây dựng ý thức chấp hành Pháp luật về giao thông đường bộ giúp cho người học điều khiển xe đảm bảo trật tự và an toàn giao thông. 1.2. Yêu cầu Thông qua môn học Pháp luật về giao thông đường bộ: Cung cấp cho người học hiểu và nắm vững pháp luật về giao thông đường bộ, hệ thống báo hiệu đường bộ Việt Nam. Người học biết vận dụng thành thạo, linh hoạt xử lý các tình huống giao thông, điều khiển xe đúng luật và đảm bảo an toàn.",
+          "text_chars": 1485,
+          "word_count": 336,
+          "table_count": 1,
+          "engine_metadata": {},
+          "preview": "3 III. Nội dung dạy thực hành lái xe 1. Mục đích, yêu cầu 1.1. Mục đích Để thiết kế các bài giảng Môn học thực hành lái xe, nhằm trang bị cho người học lái xe: - Các kỹ năng cơ bản lái xe an toàn, kỹ năng lái xe chở hàng, có khả năng điều khiển xe mô tô các hạng A1, A, ở các điều kiện giao thông khác nhau. 1.2. Yêu cầu Thông qua môn học Thực hành lái xe ngườ"
+        }
+      ]
+    },
+    {
+      "document": "tailieu.pdf",
+      "path": "D:\\BotAI\\tailieu.pdf",
+      "page": 1,
+      "categories": [
+        "text_clear",
+        "table_pdf_or_grid",
+        "legal_structure",
+        "complex_layout"
+      ],
+      "source_features": {
+        "document": "tailieu.pdf",
+        "path": "D:\\BotAI\\tailieu.pdf",
+        "page": 1,
+        "score": 92,
+        "categories": [
+          "text_clear",
+          "table_pdf_or_grid",
+          "legal_structure",
+          "complex_layout"
+        ],
+        "text_chars": 2040,
+        "word_count": 441,
+        "block_count": 24,
+        "image_count": 0,
+        "table_count": 2,
+        "line_like_count": 0,
+        "legal_marker_count": 5,
+        "digit_ratio": 0.0181,
+        "rotation": 0,
+        "aspect_ratio": 0.773,
+        "preview": "BỘ GIAO THÔNG VẬN TẢI ____________________ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc __________________________________ Số: 35/2024/TT-BGTVT Hà Nội, ngày 15 tháng 11 năm 2024 THÔNG TƯ Quy định về đào tạo, sát hạch, cấp giấy phép lái xe; cấ"
+      },
+      "engines": [
+        {
+          "engine": "pymupdf",
+          "ok": true,
+          "error": "",
+          "latency_sec": 0.1574,
+          "text": "BỘ GIAO THÔNG VẬN TẢI ____________________ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc __________________________________ Số: 35/2024/TT-BGTVT Hà Nội, ngày 15 tháng 11 năm 2024 THÔNG TƯ Quy định về đào tạo, sát hạch, cấp giấy phép lái xe; cấp, sử dụng giấy phép lái xe quốc tế; đào tạo, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ Căn cứ Luật Trật tự, an toàn giao thông đường bộ ngày 27 tháng 6 năm 2024; Căn cứ Nghị định số 56/2022/NĐ-CP ngày 24 tháng 8 năm 2022 của Chính phủ quy định chức năng, nhiệm vụ, quyền hạn và cơ cấu tổ chức của Bộ Giao thông vận tải; Theo đề nghị của Vụ trưởng Vụ Vận tải và Cục trưởng Cục Đường bộ Việt Nam, Bộ trưởng Bộ Giao thông vận tải ban hành Thông tư quy định về đào tạo, sát hạch, cấp giấy phép lái xe; cấp, sử dụng giấy phép lái xe quốc tế; đào tạo, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ. Phần I QUY ĐỊNH CHUNG Điều 1. Phạm vi điều chỉnh Thông tư này quy định về mẫu giấy phép lái xe, đào tạo, sát hạch, cấp, đổi, cấp lại, thu hồi giấy phép lái xe, sử dụng giấy phép lái xe và tiêu chuẩn của sân tập lái để sát hạch lái xe mô tô; mẫu giấy phép lái xe quốc tế, cấp, sử dụng giấy phép lái xe quốc tế; tiêu chuẩn đào tạo, kiểm tra, cấp, cấp lại chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ và tiêu chuẩn của cơ sở đào tạo người điều khiển xe máy chuyên dùng thực hiện bồi dưỡng, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ. Điều 2. Đối tượng áp dụng 1. Thông tư này áp dụng đối với tổ chức, cá nhân có liên quan tới đào tạo, sát hạch, cấp, đổi, cấp lại, thu hồi giấy phép lái xe, sử dụng giấy phép lái xe và tiêu chuẩn của sân tập lái để sát hạch lái xe mô tô; cấp, sử dụng giấy phép lái xe quốc tế; đào tạo, kiểm tra, cấp, cấp lại chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ và tiêu chuẩn của cơ sở đào tạo người điều khiển xe máy chuyên dùng thực hiện bồi dưỡng, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ.",
+          "text_chars": 2040,
+          "word_count": 441,
+          "table_count": 2,
+          "engine_metadata": {},
+          "preview": "BỘ GIAO THÔNG VẬN TẢI ____________________ CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM Độc lập - Tự do - Hạnh phúc __________________________________ Số: 35/2024/TT-BGTVT Hà Nội, ngày 15 tháng 11 năm 2024 THÔNG TƯ Quy định về đào tạo, sát hạch, cấp giấy phép lái xe; cấp, sử dụng giấy phép lái xe quốc tế; đào tạo, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật "
+        }
+      ]
+    }
+  ]
+}

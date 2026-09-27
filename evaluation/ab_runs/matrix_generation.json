@@ -1,0 +1,50 @@
+{
+  "kind": "generation",
+  "case_file": "D:\\BotAI\\tests\\fixtures\\golden_tailieu_v2_100.json",
+  "limit": 5,
+  "matrix": [
+    {
+      "name": "current_bge_m3_qwen25",
+      "env": {
+        "BOTAI_EMBEDDING_MODEL_PATH": "./models--BAAI--bge-m3",
+        "BOTAI_CHROMA_DIR": "chroma_db",
+        "BOTAI_BM25_PATH": "bm25_retriever.pkl",
+        "BOTAI_LLM_MODEL": "qwen2.5:latest",
+        "BOTAI_RERANKER_ENABLED": "0"
+      },
+      "rebuild": null,
+      "run": {
+        "returncode": 1,
+        "elapsed_sec": 28.968,
+        "stdout_tail": "Initializing AI models, please wait...\nUsing torch device for embeddings/reranker: cuda\nReranker enabled: False\nReranker skipped for fast LLM-focused mode.\nFAIL tailieu_01_scope (2332 ms)\n  missing_answer=[]\n  forbidden_found=[]\n  missing_source=['trang PDF 1']\n  refusal_ok=True\n  expected_top_type= actual=text\n  response=Thông tư này quy định về mẫu giấy phép lái xe, đào tạo, sát hạch, cấp, đổi, cấp lại, thu hồi giấy phép lái xe, sử dụng giấy phép lái xe và tiêu chuẩn của sân tập lái để sát hạch lái xe mô tô; mẫu giấy phép lái xe quốc tế, cấp, sử dụng giấy phép lái xe quốc tế; tiêu chuẩn đào tạo, kiểm tra, cấp, cấp lại chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ và tiêu chuẩn của cơ sở đào tạo người điều khiển xe máy chuyên dùng thực hiện bồi dưỡng, kiểm tra, cấp chứng chỉ bồi dưỡng kiến thức pháp luật về giao thông đường bộ. 2. Thông tư này bãi bỏ các Thông tư: a) Thông tư số 06/2011/TT-BGTVT ngày 07 tháng 3 năm 2011 của Bộ trưởng Bộ Giao thông vận tải quy định về bồi dưỡng kiến thức pháp luật về giao thông đường bộ cho người điều khiển xe máy chuyên dùng tham gia giao thông đường bộ; b\nPASS tailieu_02_safe_driving_time (2222 ms)\nPASS tailieu_03_night_driving (2449 ms)\nPASS tailieu_04_a1_self_study (2581 ms)\nPASS tailieu_05_a1_total_time (2161 ms)\n\nSUMMARY {\"total\": 5, \"passed\": 4, \"failed\": 1, \"answer_passed\": 5, \"source_passed\": 4, \"forbidden_passed\": 5, \"top_type_passed\": 5, \"refusal_passed\": 5, \"answer_correctness\": 1.0, \"citation_correctness\": 0.8, \"refusal_accuracy\": 0.0, \"hallucination_proxy\": 0.0, \"answer_reference_recall\": 0.8691, \"response_time_ms\": 11745}\n",
+        "stderr_tail": "\nLoading weights:   0%|          | 0/391 [00:00<?, ?it/s]\nLoading weights: 100%|██████████| 391/391 [00:00<00:00, 22855.49it/s]\n",
+        "result_exists": true
+      },
+      "result": "D:\\BotAI\\evaluation\\ab_runs\\current_bge_m3_qwen25_generation.json",
+      "summary": {
+        "total": 5,
+        "passed": 4,
+        "failed": 1,
+        "answer_correctness": 1.0,
+        "citation_correctness": 0.8,
+        "source_passed": 4,
+        "hallucination_proxy": 0.0,
+        "answer_reference_recall": 0.8691,
+        "response_time_ms": 11745
+      }
+    },
+    {
+      "name": "bge_large_en_qwen25_isolated",
+      "env": {
+        "BOTAI_EMBEDDING_MODEL_PATH": "./models--BAAI--bge-large-en-v1.5",
+        "BOTAI_CHROMA_DIR": "evaluation/ab_indexes/bge_large_en/chroma_db",
+        "BOTAI_BM25_PATH": "evaluation/ab_indexes/bge_large_en/bm25_retriever.pkl",
+        "BOTAI_LLM_MODEL": "qwen2.5:latest",
+        "BOTAI_RERANKER_ENABLED": "0",
+        "BOTAI_OCR_ENGINE": "tesseract"
+      },
+      "skipped": true,
+      "reason": "requires --rebuild-index for a fair embedding A/B run"
+    }
+  ]
+}

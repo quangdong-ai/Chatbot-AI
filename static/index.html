@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot - Qwen 2.5</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css?v=upgrade-4">
+</head>
+<body>
+    <div class="chat-container">
+        <header class="chat-header">
+            <select id="botSelect" title="Chọn bot"></select>
+            <div class="logo">✨ Qwen AI</div>
+            <div class="header-actions">
+                <button id="historyBtn" class="header-btn" title="Tải lịch sử phiên này" type="button">Lịch sử</button>
+                <button id="newSessionBtn" class="header-btn" title="Tạo phiên chat mới" type="button">Phiên mới</button>
+                <div class="status">● Online</div>
+            </div>
+        </header>
+        <main class="chat-box" id="chatBox">
+            <div class="message ai">
+                <div class="avatar">🤖</div>
+                <div class="bubble">Xin chào! Mình là AI Assistant. Mình có thể giúp gì cho bạn hôm nay?</div>
+            </div>
+        </main>
+        <footer class="chat-input-area">
+            <input type="text" id="userInput" placeholder="Nhập tin nhắn..." autocomplete="off" />
+            <button id="micBtn" class="tool-btn" title="Bật chờ Hey Hoa" aria-label="Bật chờ Hey Hoa" type="button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 14C13.66 14 15 12.66 15 11V5C15 3.34 13.66 2 12 2C10.34 2 9 3.34 9 5V11C9 12.66 10.34 14 12 14Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M19 11C19 14.87 15.87 18 12 18C8.13 18 5 14.87 5 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 18V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 22H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <button id="speakBtn" class="tool-btn" title="Đọc câu trả lời" aria-label="Đọc câu trả lời" type="button">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 9V15H8L13 20V4L8 9H4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M17 9.5C17.8 10.2 18.25 11.1 18.25 12C18.25 12.9 17.8 13.8 17 14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M19.5 7C21 8.4 21.75 10.15 21.75 12C21.75 13.85 21 15.6 19.5 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <button id="sendBtn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2.01 21L23 12L2.01 3L2 10L17 12L2 14L2.01 21Z" fill="currentColor"/>
+                </svg>
+            </button>
+        </footer>
+    </div>
+    <script src="/static/script.js?v=upgrade-4"></script>
+</body>
+</html>
