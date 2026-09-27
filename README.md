@@ -49,7 +49,7 @@ Chatbot AI tra cứu tài liệu nội bộ/pháp lý theo kiến trúc RAG, h�
 | Embedding | BGE-M3 local model |
 | Vector database | ChromaDB |
 | Keyword retrieval | BM25 |
-| Hybrid search | RRF hoặc weighted fusion |
+| Hybrid search | RRF / weighted fusion |
 | Reranker | BGE reranker large / BGE reranker v2 m3 |
 | PDF parser | PyMuPDF |
 | OCR fallback | Tesseract |
